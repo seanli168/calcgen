@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - Free Online Percentage Tool | CalcGen</title>
+    <meta name="description" content="Free percentage calculator with multiple modes. Calculate percentage of a number, percentage change, find the whole from a percentage, and more. Instant results.">
+    <meta name="keywords" content="percentage calculator, percent calculator, percentage change calculator, percentage increase, percentage decrease, percentage formula">
+    <meta name="robots" content="index, follow">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate a percentage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To calculate a percentage of a number: multiply the number by the percentage (as a decimal). For example, 20% of 150 = 150 × 0.20 = 30. The general formula is: Percentage = (Part / Whole) × 100."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you calculate percentage change?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Percentage change = ((New Value - Old Value) / Old Value) × 100. If the result is positive, it's a percentage increase. If negative, it's a percentage decrease. For example, going from 100 to 125 is a 25% increase."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 650px; margin: 0 auto; }
+        
+        .mode-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .mode-tab { padding: 10px 16px; border: 2px solid #e5e7eb; border-radius: 10px; background: white; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #6b7280; font-family: inherit; }
+        .mode-tab:hover { border-color: #2563eb; color: #2563eb; }
+        .mode-tab.active { background: #2563eb; color: white; border-color: #2563eb; }
+        
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 28px; } .calculator-card { padding: 20px; } }
+        
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-group .input-wrapper { position: relative; }
+        .input-group .prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; font-weight: 500; pointer-events: none; }
+        .input-group input { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input.has-prefix { padding-left: 32px; }
+        .input-group input:focus { outline: none; border-color: #2563eb; background: white; }
+        
+        .calculate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        
+        .result-item { background: #f0f7ff; border-radius: 10px; padding: 20px; margin-bottom: 10px; text-align: center; }
+        .result-item .label { font-size: 13px; color: #6b7280; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .result-item .value { font-size: 32px; font-weight: 700; color: #2563eb; margin-top: 4px; }
+        .result-item .formula-text { font-size: 13px; color: #9ca3af; margin-top: 6px; font-style: italic; }
+        
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; margin-top: 24px; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section p { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .content-section ul { margin-bottom: 12px; padding-left: 20px; color: #4b5563; }
+        .content-section li { margin-bottom: 6px; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; font-size: 16px; margin-bottom: 4px; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Percentage Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Percentage Calculator</h1><p>Free online percentage calculator with multiple modes. Calculate percentages, percentage change, and more — instantly.</p></section>
+        
+        <section class="calculator-card">
+            <div class="mode-tabs">
+                <button class="mode-tab active" onclick="switchMode('percent-of', this)">% of a Number</button>
+                <button class="mode-tab" onclick="switchMode('percent-change', this)">% Change</button>
+                <button class="mode-tab" onclick="switchMode('find-whole', this)">Find the Whole</button>
+                <button class="mode-tab" onclick="switchMode('percent-to-decimal', this)">% to Decimal</button>
+            </div>
+            <div class="calculator-grid">
+                <div class="input-column" id="input-column"></div>
+                <div class="result-section">
+                    <div class="result-item"><div class="label">Result</div><div class="value" id="result">—</div><div class="formula-text" id="formula"></div></div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>How to Use This Percentage Calculator</h2>
+            <p>Choose a calculation mode using the tabs above:</p>
+            <ul><li><strong>% of a Number:</strong> What is X% of Y? (e.g., 20% of 150 = 30)</li><li><strong>% Change:</strong> What is the percentage increase or decrease from A to B?</li><li><strong>Find the Whole:</strong> X is Y% of what number?</li><li><strong>% to Decimal:</strong> Convert a percentage to a decimal instantly.</li></ul>
+            
+            <h2>Percentage Formulas</h2>
+            <p><strong>Percent of a Number:</strong> Result = Number × (Percentage ÷ 100)</p>
+            <p><strong>Percentage Change:</strong> Change = ((New - Old) ÷ Old) × 100</p>
+            <p><strong>Find the Whole:</strong> Whole = Part ÷ (Percentage ÷ 100)</p>
+            
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">How do you calculate a percentage?</div><div class="answer">Multiply the number by the percentage as a decimal. For example, 20% of 150 = 150 × 0.20 = 30.</div></div>
+            <div class="faq-item"><div class="question">How do you calculate percentage change?</div><div class="answer">((New Value - Old Value) / Old Value) × 100. Going from 100 to 125 is a 25% increase.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free with no sign-up required.</div></div>
+        </section>
+        
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/discount-calculator/">Discount Calculator</a></li><li><a href="/tip-calculator/">Tip Calculator</a></li><li><a href="/compound-interest-calculator/">Compound Interest Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+
+    <script>
+        let currentMode = 'percent-of';
+        function switchMode(mode, btn) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderInputs();
+            calculatePercentage();
+        }
+        function renderInputs() {
+            const container = document.getElementById('input-column');
+            if (mode === 'percent-of') {
+                container.innerHTML = `
+                    <div class="input-group"><label>Percentage (%)</label><input type="number" id="input1" value="20" step="0.1"></div>
+                    <div class="input-group"><label>Number</label><input type="number" id="input2" value="150" step="0.01"></div>
+                    <button class="calculate-btn" onclick="calculatePercentage()">Calculate</button>`;
+            } else if (mode === 'percent-change') {
+                container.innerHTML = `
+                    <div class="input-group"><label>Old Value</label><input type="number" id="input1" value="100" step="0.01"></div>
+                    <div class="input-group"><label>New Value</label><input type="number" id="input2" value="125" step="0.01"></div>
+                    <button class="calculate-btn" onclick="calculatePercentage()">Calculate</button>`;
+            } else if (mode === 'find-whole') {
+                container.innerHTML = `
+                    <div class="input-group"><label>Part (the number you have)</label><input type="number" id="input1" value="30" step="0.01"></div>
+                    <div class="input-group"><label>Percentage (%)</label><input type="number" id="input2" value="20" step="0.1"></div>
+                    <button class="calculate-btn" onclick="calculatePercentage()">Calculate</button>`;
+            } else if (mode === 'percent-to-decimal') {
+                container.innerHTML = `
+                    <div class="input-group"><label>Percentage (%)</label><input type="number" id="input1" value="25" step="0.1"></div>
+                    <button class="calculate-btn" onclick="calculatePercentage()">Calculate</button>`;
+            }
+        }
+        function calculatePercentage() {
+            let result = '—', formula = '';
+            const v1 = parseFloat(document.getElementById('input1')?.value) || 0;
+            const v2 = parseFloat(document.getElementById('input2')?.value) || 0;
+            if (mode === 'percent-of') {
+                result = ((v1 / 100) * v2).toFixed(2);
+                formula = v1 + '% of ' + v2 + ' = ' + result;
+            } else if (mode === 'percent-change') {
+                if (v1 !== 0) {
+                    const change = ((v2 - v1) / Math.abs(v1)) * 100;
+                    result = change.toFixed(2) + '%';
+                    formula = '((' + v2 + ' - ' + v1 + ') ÷ ' + v1 + ') × 100';
+                } else { result = '—'; formula = 'Old value cannot be zero'; }
+            } else if (mode === 'find-whole') {
+                if (v2 !== 0) {
+                    result = (v1 / (v2 / 100)).toFixed(2);
+                    formula = v1 + ' is ' + v2 + '% of ' + result;
+                } else { result = '—'; formula = 'Percentage cannot be zero'; }
+            } else if (mode === 'percent-to-decimal') {
+                result = (v1 / 100).toFixed(4);
+                formula = v1 + '% = ' + result;
+            }
+            document.getElementById('result').textContent = result;
+            document.getElementById('formula').textContent = formula;
+        }
+        renderInputs();
+        calculatePercentage();
+    </script>
+</body>
+</html>
