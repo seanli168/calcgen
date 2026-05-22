@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Retirement Calculator - Free Retirement Savings Planner | CalcGen</title>
+    <meta name="description" content="Free retirement calculator to plan your savings goal. See how much you need to save monthly to retire comfortably. Includes investment growth projections and retirement age planning.">
+    <meta name="keywords" content="retirement calculator, retirement savings calculator, retirement planner, 401k calculator, retirement age calculator, nest egg calculator">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Retirement Calculator - Free Retirement Savings Planner">
+    <meta property="og:description" content="Plan your retirement savings. Calculate how much you need to save each month to reach your retirement goal. Free, no sign-up.">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much do I need to retire?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A common rule of thumb is to have 25 times your annual expenses saved. This comes from the 4% rule, which suggests you can safely withdraw 4% of your retirement savings each year without running out of money. For example, if you need $50,000 per year in retirement, you'd need approximately $1.25 million saved."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is retirement savings calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Retirement savings is calculated by projecting the future value of your current savings and ongoing contributions using compound interest. The calculator estimates how much your money will grow between now and your retirement age, then determines if that amount can sustain your desired retirement income."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a safe withdrawal rate in retirement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 4% rule is the most commonly cited safe withdrawal rate. It suggests withdrawing 4% of your retirement portfolio in the first year, then adjusting for inflation each year after. This rate is designed to make your savings last at least 30 years. Some experts now recommend a more conservative 3-3.5% rate given current market conditions."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.2; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 650px; margin: 0 auto; }
+        
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        
+        @media (max-width: 768px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 28px; }
+            .calculator-card { padding: 20px; }
+        }
+        
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-group .input-wrapper { position: relative; }
+        .input-group .prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; font-weight: 500; pointer-events: none; }
+        .input-group .suffix { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; font-weight: 500; pointer-events: none; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; transition: border-color 0.2s; background: #fafafa; font-family: inherit; }
+        .input-group input.has-prefix { padding-left: 32px; }
+        .input-group input.has-suffix { padding-right: 60px; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2563eb; background: white; }
+        .input-group select { cursor: pointer; }
+        
+        .calculate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        
+        .result-section { display: flex; flex-direction: column; justify-content: flex-start; }
+        
+        .result-item { background: #f0f7ff; border-radius: 10px; padding: 16px; margin-bottom: 10px; }
+        .result-item .label { font-size: 13px; color: #6b7280; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .result-item .value { font-size: 26px; font-weight: 700; color: #111827; margin-top: 2px; }
+        
+        .result-item.highlight { background: #dbeafe; border: 2px solid #2563eb; }
+        .result-item.highlight .value { color: #2563eb; }
+        
+        .result-item.warning { background: #fef3c7; border: 2px solid #f59e0b; }
+        .result-item.warning .value { color: #d97706; }
+        
+        .result-item.success { background: #d1fae5; border: 2px solid #22c55e; }
+        .result-item.success .value { color: #15803d; }
+        
+        .result-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+        .result-mini { background: #f9fafb; border-radius: 8px; padding: 12px; text-align: center; }
+        .result-mini .mini-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+        .result-mini .mini-value { font-size: 16px; font-weight: 600; color: #374151; }
+        
+        .chart-container { margin-top: 16px; height: 280px; }
+        .chart-container canvas { width: 100% !important; height: 100% !important; }
+        
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; margin-top: 24px; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section h3 { font-size: 18px; font-weight: 600; color: #1f2937; margin-bottom: 8px; margin-top: 20px; }
+        .content-section p { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .content-section ul { margin-bottom: 12px; padding-left: 20px; color: #4b5563; }
+        .content-section li { margin-bottom: 6px; }
+        
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-item .question { font-weight: 600; color: #111827; font-size: 16px; margin-bottom: 4px; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">CalcGen</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/calculators/">Calculators</a>
+                <a href="/blog/">Blog</a>
+                <a href="/about/">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> &rsaquo; 
+        <a href="/calculators/">Calculators</a> &rsaquo; 
+        <strong>Retirement Calculator</strong>
+    </div>
+
+    <main class="main-container">
+
+        <section class="hero">
+            <h1>Retirement Calculator</h1>
+            <p>Plan your retirement savings goal. See how much you need to save each month to retire comfortably — and whether you're on track.</p>
+        </section>
+
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                
+                <!-- Input Column -->
+                <div class="input-column">
+                    <div class="input-group">
+                        <label for="current-age">Current Age</label>
+                        <input type="number" id="current-age" value="30" min="18" max="80" step="1" class="has-suffix">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="retirement-age">Retirement Age</label>
+                        <input type="number" id="retirement-age" value="65" min="25" max="85" step="1" class="has-suffix">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="current-savings">Current Retirement Savings ($)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">$</span>
+                            <input type="number" id="current-savings" value="50000" min="0" max="100000000" step="1000" class="has-prefix">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthly-contribution">Monthly Contribution ($)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">$</span>
+                            <input type="number" id="monthly-contribution" value="800" min="0" max="1000000" step="50" class="has-prefix">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="annual-return">Expected Annual Return (%)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">%</span>
+                            <input type="number" id="annual-return" value="7" min="0.1" max="20" step="0.1" class="has-prefix">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="desired-income">Desired Annual Retirement Income ($)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">$</span>
+                            <input type="number" id="desired-income" value="60000" min="1000" max="10000000" step="1000" class="has-prefix">
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateRetirement()">
+                        Calculate My Retirement Plan
+                    </button>
+                </div>
+
+                <!-- Result Column -->
+                <div class="result-section">
+                    <div class="result-item highlight" id="result-status">
+                        <div class="label">Projected Savings at Retirement</div>
+                        <div class="value" id="projected-savings">$1,247,382</div>
+                    </div>
+
+                    <div class="result-mini-grid">
+                        <div class="result-mini">
+                            <div class="mini-label">Years to Retirement</div>
+                            <div class="mini-value" id="years-to-retire">35</div>
+                        </div>
+                        <div class="result-mini">
+                            <div class="mini-label">Nest Egg Needed</div>
+                            <div class="mini-value" id="nest-egg-needed">$1,500,000</div>
+                        </div>
+                    </div>
+
+                    <div class="result-item" id="gap-result">
+                        <div class="label">Savings Gap</div>
+                        <div class="value" id="savings-gap">-$252,618</div>
+                    </div>
+
+                    <div class="result-item" id="suggestion-box">
+                        <div class="label">Monthly Contribution Needed to Close Gap</div>
+                        <div class="value" id="needed-monthly">$1,150</div>
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="chart-container">
+                        <canvas id="chart"></canvas>
+                    </div>
+
+                    <!-- AdSense Placeholder -->
+                    <div class="ad-placeholder">
+                        AdSense Ad Unit (300×250) - Will be replaced after approval
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Educational Content -->
+        <section class="content-section">
+            <h2>How to Use This Retirement Calculator</h2>
+            <p>Our retirement calculator helps you answer the most important question: <strong>"Am I saving enough?"</strong></p>
+            <ul>
+                <li><strong>Current Age & Retirement Age:</strong> Set your timeline. The difference is how many years your money has to grow.</li>
+                <li><strong>Current Savings:</strong> How much you've already saved (401k, IRA, pension, etc.).</li>
+                <li><strong>Monthly Contribution:</strong> What you're adding each month. Include employer matches if applicable.</li>
+                <li><strong>Expected Return:</strong> For long-term projections, 6-8% is a common assumption for a balanced portfolio.</li>
+                <li><strong>Desired Income:</strong> How much you want to spend annually in retirement. A good starting point is 70-80% of your current income.</li>
+            </ul>
+            <p>Hit <strong>"Calculate"</strong> and the tool instantly shows whether your projected savings will cover your retirement needs. If there's a gap, it tells you exactly how much more you need to contribute each month.</p>
+
+            <h2>Understanding the 4% Rule</h2>
+            <p>This calculator uses the <strong>4% rule</strong> to estimate how much you need saved. The rule says:</p>
+            <ul>
+                <li>In your first year of retirement, withdraw <strong>4%</strong> of your total savings.</li>
+                <li>Each year after, adjust that dollar amount for inflation.</li>
+                <li>This strategy is designed to make your money last <strong>30+ years</strong>.</li>
+            </ul>
+            <p>For example, if you want $60,000 per year in retirement, you'd need approximately <strong>$1,500,000</strong> saved (because $60,000 ÷ 0.04 = $1,500,000).</p>
+            <p>Some experts now recommend a more conservative <strong>3.5%</strong> withdrawal rate. You can adjust your expectations accordingly — a lower withdrawal rate means you'll need more saved, but your money will last longer.</p>
+
+            <h2>The Power of Starting Early</h2>
+            <p>Time is the most powerful factor in retirement planning. Here's how a $500 monthly investment grows at 7% annual return:</p>
+            <ul>
+                <li><strong>Start at age 25 (40 years):</strong> ~$1,312,000</li>
+                <li><strong>Start at age 35 (30 years):</strong> ~$612,000</li>
+                <li><strong>Start at age 45 (20 years):</strong> ~$263,000</li>
+            </ul>
+            <p>A 10-year head start can <strong>double</strong> your retirement savings. Use this calculator to see the difference for your own situation.</p>
+
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="question">How much do I need to retire?</div>
+                <div class="answer">The 4% rule is a common guideline: multiply your desired annual retirement income by 25. If you need $60,000 per year, you'd need about $1.5 million saved. This calculator uses that formula to give you a personalized target based on your desired income.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What is a safe withdrawal rate?</div>
+                <div class="answer">The 4% rule is the most widely cited safe withdrawal rate. It means withdrawing 4% of your retirement savings in year one, then adjusting for inflation annually. At this rate, your money should last 30+ years. A more conservative 3-3.5% rate may be appropriate in low-return environments.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Does this calculator account for inflation?</div>
+                <div class="answer">The expected return rate should be a <strong>real return</strong> (after inflation). If you expect 10% nominal returns and 3% inflation, use 7% as your expected return. The 4% rule also bakes in inflation adjustments, so the nest egg target accounts for maintaining purchasing power.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">What if I have a pension?</div>
+                <div class="answer">If you expect pension income, subtract it from your desired retirement income. For example, if you want $60,000 per year and have a $20,000 pension, you only need your savings to generate $40,000. Enter $40,000 as your desired income in the calculator.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="question">Is this retirement calculator free?</div>
+                <div class="answer">Yes, completely free. No sign-up, no email required. Use it as many times as you want to test different scenarios, ages, and contribution levels.</div>
+            </div>
+        </section>
+
+        <!-- Related Calculators -->
+        <section class="content-section">
+            <h2>Related Calculators</h2>
+            <p>Try our other free financial calculators to complete your financial plan:</p>
+            <ul>
+                <li><a href="/compound-interest-calculator/">Compound Interest Calculator</a> — See how a lump sum investment grows over time</li>
+                <li><a href="/sip-calculator/">SIP Calculator</a> — Calculate returns from monthly systematic investments</li>
+                <li><a href="/mortgage-calculator/">Mortgage Calculator</a> — Estimate your monthly house payment</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/privacy-policy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="/about/">About</a>
+        </div>
+        <p>&copy; 2026 CalcGen. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        let myChart = null;
+        calculateRetirement();
+
+        function calculateRetirement() {
+            const currentAge = parseInt(document.getElementById('current-age').value) || 30;
+            const retirementAge = parseInt(document.getElementById('retirement-age').value) || 65;
+            const currentSavings = parseFloat(document.getElementById('current-savings').value) || 0;
+            const monthlyContribution = parseFloat(document.getElementById('monthly-contribution').value) || 0;
+            const annualReturn = parseFloat(document.getElementById('annual-return').value) || 7;
+            const desiredIncome = parseFloat(document.getElementById('desired-income').value) || 60000;
+
+            const yearsToRetire = Math.max(1, retirementAge - currentAge);
+            const monthlyRate = annualReturn / 100 / 12;
+            const totalMonths = yearsToRetire * 12;
+
+            // Future value of current savings (lump sum)
+            const savingsFV = currentSavings * Math.pow(1 + annualReturn / 100, yearsToRetire);
+
+            // Future value of monthly contributions
+            let contributionsFV = 0;
+            if (monthlyRate > 0 && monthlyContribution > 0) {
+                contributionsFV = monthlyContribution * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate);
+            } else if (monthlyRate === 0 && monthlyContribution > 0) {
+                contributionsFV = monthlyContribution * totalMonths;
+            }
+
+            const projectedSavings = savingsFV + contributionsFV;
+            const nestEggNeeded = desiredIncome / 0.04; // 4% rule
+            const gap = projectedSavings - nestEggNeeded;
+
+            // Calculate needed monthly contribution to close gap
+            let neededMonthly = 0;
+            if (gap < 0 && yearsToRetire > 0 && monthlyRate > 0) {
+                const targetFV = nestEggNeeded - savingsFV;
+                if (targetFV > 0) {
+                    neededMonthly = targetFV / (((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate));
+                }
+            }
+
+            // Update display
+            document.getElementById('projected-savings').textContent = '$' + projectedSavings.toLocaleString('en-US', {
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            });
+            document.getElementById('years-to-retire').textContent = yearsToRetire;
+            document.getElementById('nest-egg-needed').textContent = '$' + nestEggNeeded.toLocaleString('en-US', {
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            });
+            document.getElementById('savings-gap').textContent = '$' + gap.toLocaleString('en-US', {
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            });
+            document.getElementById('needed-monthly').textContent = '$' + neededMonthly.toLocaleString('en-US', {
+                minimumFractionDigits: 0, maximumFractionDigits: 0
+            });
+
+            // Color coding for gap
+            const gapResult = document.getElementById('gap-result');
+            const statusResult = document.getElementById('result-status');
+            const suggestionBox = document.getElementById('suggestion-box');
+            
+            gapResult.classList.remove('warning', 'success');
+            statusResult.classList.remove('highlight', 'success');
+            
+            if (gap >= 0) {
+                gapResult.classList.add('success');
+                statusResult.classList.add('success');
+                suggestionBox.style.display = 'none';
+            } else {
+                gapResult.classList.add('warning');
+                statusResult.classList.add('highlight');
+                suggestionBox.style.display = 'block';
+            }
+
+            updateChart(projectedSavings, nestEggNeeded);
+        }
+
+        function updateChart(projected, needed) {
+            const ctx = document.getElementById('chart').getContext('2d');
+            if (myChart) myChart.destroy();
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Retirement Plan'],
+                    datasets: [
+                        {
+                            label: 'Projected Savings',
+                            data: [projected],
+                            backgroundColor: projected >= needed ? '#22c55e' : '#2563eb',
+                            borderRadius: 6,
+                            barPercentage: 0.4,
+                        },
+                        {
+                            label: 'Nest Egg Needed',
+                            data: [needed],
+                            backgroundColor: '#f59e0b',
+                            borderRadius: 6,
+                            barPercentage: 0.4,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { usePointStyle: true, padding: 20, font: { size: 13 } }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.raw.toLocaleString('en-US', { minimumFractionDigits: 0 });
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + (value / 1000).toFixed(0) + 'k';
+                                }
+                            },
+                            grid: { color: '#f3f4f6' }
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
