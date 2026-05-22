@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - Free Length, Weight, Temperature Converter | CalcGen</title>
+    <meta name="description" content="Free online unit converter for length, weight, temperature, and more. Convert miles to km, pounds to kg, Fahrenheit to Celsius instantly.">
+    <meta name="keywords" content="unit converter, length converter, weight converter, temperature converter, metric converter, imperial converter, miles to km, pounds to kg, Fahrenheit to Celsius">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/unit-converter/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I convert miles to kilometers?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply miles by 1.60934. For example, 10 miles = 16.09 km. Use our free unit converter above for instant conversions."}},
+            {"@type": "Question", "name": "How do I convert Fahrenheit to Celsius?", "acceptedAnswer": {"@type": "Answer", "text": "°C = (°F - 32) × 5/9. For example, 68°F = 20°C. Our temperature converter handles this automatically."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"}, {"@type": "ListItem", "position": 3, "name": "Unit Converter"}]}
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 650px; margin: 0 auto; }
+        .category-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .cat-tab { padding: 10px 16px; border: 2px solid #e5e7eb; border-radius: 10px; background: white; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; color: #6b7280; }
+        .cat-tab.active { background: #2563eb; color: white; border-color: #2563eb; }
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .converter-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: end; }
+        @media (max-width: 640px) { .converter-grid { grid-template-columns: 1fr; } }
+        .input-group { margin-bottom: 0; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2563eb; background: white; }
+        .swap-btn { background: #f0f7ff; border: 2px solid #e5e7eb; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+        .result-value { font-size: 28px; font-weight: 700; color: #2563eb; padding: 12px 14px; background: #f0f7ff; border-radius: 10px; text-align: center; min-height: 52px; display: flex; align-items: center; justify-content: center; }
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 24px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; margin-top: 24px; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section p, .content-section ul { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Unit Converter</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Unit Converter — Free Length, Weight & Temperature Tool</h1><p>Convert between metric and imperial units instantly. Miles to km, pounds to kg, Fahrenheit to Celsius — and more.</p></section>
+        
+        <section class="calculator-card">
+            <div class="category-tabs" id="cat-tabs">
+                <button class="cat-tab active" data-cat="length">📏 Length</button>
+                <button class="cat-tab" data-cat="weight">⚖️ Weight</button>
+                <button class="cat-tab" data-cat="temperature">🌡️ Temperature</button>
+            </div>
+            <div class="converter-grid" id="converter-grid">
+                <div class="input-group"><label>From</label><input type="number" id="from-value" value="1" step="any" oninput="convert()"><select id="from-unit"></select></div>
+                <button class="swap-btn" onclick="swapUnits()">⇄</button>
+                <div><label style="font-weight:600;font-size:14px;color:#374151;margin-bottom:6px;display:block;">To</label><div class="result-value" id="to-value">—</div><select id="to-unit" style="width:100%;margin-top:6px;" onchange="convert()"></select></div>
+            </div>
+            <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+        </section>
+        
+        <section class="content-section">
+            <h2>How to Use This Unit Converter</h2>
+            <ul><li>Choose a category (Length, Weight, Temperature)</li><li>Enter a value in the "From" field</li><li>Select your units — the conversion appears instantly</li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">How do I convert miles to km?</div><div class="answer">Multiply miles by 1.60934. 10 miles = 16.09 km.</div></div>
+            <div class="faq-item"><div class="question">How do I convert Fahrenheit to Celsius?</div><div class="answer">°C = (°F - 32) × 5/9. 68°F = 20°C.</div></div>
+            <div class="faq-item"><div class="question">Is this unit converter free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/percentage-calculator/">Percentage Calculator</a></li><li><a href="/bmi-calculator/">BMI Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        const units = {
+            length: [
+                { name: 'Meters (m)', factor: 1 },
+                { name: 'Kilometers (km)', factor: 1000 },
+                { name: 'Centimeters (cm)', factor: 0.01 },
+                { name: 'Millimeters (mm)', factor: 0.001 },
+                { name: 'Miles (mi)', factor: 1609.34 },
+                { name: 'Feet (ft)', factor: 0.3048 },
+                { name: 'Inches (in)', factor: 0.0254 }
+            ],
+            weight: [
+                { name: 'Kilograms (kg)', factor: 1 },
+                { name: 'Grams (g)', factor: 0.001 },
+                { name: 'Milligrams (mg)', factor: 0.000001 },
+                { name: 'Pounds (lbs)', factor: 0.453592 },
+                { name: 'Ounces (oz)', factor: 0.0283495 }
+            ],
+            temperature: null
+        };
+        let currentCategory = 'length';
+        
+        function populateUnits(cat) {
+            const fromSelect = document.getElementById('from-unit');
+            const toSelect = document.getElementById('to-unit');
+            fromSelect.innerHTML = ''; toSelect.innerHTML = '';
+            if (cat === 'temperature') {
+                ['Celsius (°C)', 'Fahrenheit (°F)', 'Kelvin (K)'].forEach((u, i) => {
+                    fromSelect.innerHTML += `<option value="${i}">${u}</option>`;
+                    toSelect.innerHTML += `<option value="${i}">${u}</option>`;
+                });
+                toSelect.value = 1;
+            } else {
+                units[cat].forEach((u, i) => {
+                    fromSelect.innerHTML += `<option value="${i}">${u.name}</option>`;
+                    toSelect.innerHTML += `<option value="${i}">${u.name}</option>`;
+                });
+                toSelect.value = Math.min(3, units[cat].length - 1);
+            }
+        }
+        
+        function convert() {
+            const fromVal = parseFloat(document.getElementById('from-value').value) || 0;
+            const cat = currentCategory;
+            let result;
+            if (cat === 'temperature') {
+                const fromIdx = parseInt(document.getElementById('from-unit').value);
+                const toIdx = parseInt(document.getElementById('to-unit').value);
+                let celsius;
+                if (fromIdx === 0) celsius = fromVal;
+                else if (fromIdx === 1) celsius = (fromVal - 32) * 5/9;
+                else celsius = fromVal - 273.15;
+                if (toIdx === 0) result = celsius;
+                else if (toIdx === 1) result = celsius * 9/5 + 32;
+                else result = celsius + 273.15;
+            } else {
+                const fromFactor = units[cat][parseInt(document.getElementById('from-unit').value)].factor;
+                const toFactor = units[cat][parseInt(document.getElementById('to-unit').value)].factor;
+                result = fromVal * fromFactor / toFactor;
+            }
+            document.getElementById('to-value').textContent = parseFloat(result.toPrecision(6)).toString();
+        }
+        
+        function swapUnits() {
+            const fromSel = document.getElementById('from-unit');
+            const toSel = document.getElementById('to-unit');
+            const temp = fromSel.value;
+            fromSel.value = toSel.value;
+            toSel.value = temp;
+            convert();
+        }
+        
+        document.getElementById('cat-tabs').addEventListener('click', function(e) {
+            if (e.target.classList.contains('cat-tab')) {
+                document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.getAttribute('data-cat');
+                populateUnits(currentCategory);
+                convert();
+            }
+        });
+        
+        populateUnits('length');
+        convert();
+    </script>
+</body>
+</html>

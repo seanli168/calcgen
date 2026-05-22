@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Calculators - CalcGen</title>
-    <meta name="description" content="Browse all free online calculators from CalcGen. Financial calculators, investment calculators, mortgage calculators, retirement calculator and more.">
+    <title>All Calculators - Free Online Financial, Health, Math & Utility Tools | CalcGen</title>
+    <meta name="description" content="Browse all 20 free online calculators from CalcGen. Financial calculators, health tools, math helpers, creative utilities, and everyday calculators.">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/calculators/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcgen.zaike888.workers.dev/"},{"@type":"ListItem","position":2,"name":"All Calculators"}]}
+    </script>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
-        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; background: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
         .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
         .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
@@ -20,12 +24,14 @@
         .hero { text-align: center; margin-bottom: 36px; }
         .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
         .hero p { font-size: 18px; color: #6b7280; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        .tool-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
-        .tool-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); border-color: #2563eb; }
-        .tool-icon { font-size: 36px; margin-bottom: 12px; }
-        .tool-card h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px; }
-        .tool-card p { font-size: 15px; color: #6b7280; line-height: 1.5; }
+        .category-section { margin-bottom: 32px; }
+        .category-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+        .tool-card { background: white; border-radius: 14px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
+        .tool-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-color: #2563eb; }
+        .tool-icon { font-size: 28px; margin-bottom: 8px; }
+        .tool-card h3 { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+        .tool-card p { font-size: 13px; color: #6b7280; line-height: 1.4; }
         .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 48px; }
         .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
         .footer a:hover { text-decoration: underline; }
@@ -33,83 +39,55 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <a href="/" class="logo">CalcGen</a>
-            <nav class="nav">
-                <a href="/">Home</a>
-                <a href="/calculators/">Calculators</a>
-                <a href="/blog/">Blog</a>
-                <a href="/about/">About</a>
-            </nav>
-        </div>
-    </header>
-    <div class="breadcrumb">
-        <a href="/">Home</a> &rsaquo; 
-        <strong>All Calculators</strong>
-    </div>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <strong>All Calculators</strong></div>
     <main class="main-container">
-        <section class="hero">
-            <h1>All Calculators</h1>
-            <p>Free online tools to help with your financial planning and calculations.</p>
-        </section>
-        <div class="tools-grid">
-            <a href="/compound-interest-calculator/" class="tool-card">
-                <div class="tool-icon">📈</div>
-                <h3>Compound Interest Calculator</h3>
-                <p>See how your savings grow over time with compound interest. Includes interactive chart and detailed formula.</p>
-            </a>
-            <a href="/sip-calculator/" class="tool-card">
-                <div class="tool-icon">💰</div>
-                <h3>SIP Calculator</h3>
-                <p>Calculate returns from monthly systematic investment plans. Year-by-year growth breakdown included.</p>
-            </a>
-            <a href="/mortgage-calculator/" class="tool-card">
-                <div class="tool-icon">🏠</div>
-                <h3>Mortgage Calculator</h3>
-                <p>Estimate your monthly mortgage payment with taxes, insurance, PMI, and HOA. Full amortization schedule.</p>
-            </a>
-            <a href="/retirement-calculator/" class="tool-card">
-                <div class="tool-icon">🎯</div>
-                <h3>Retirement Calculator</h3>
-                <p>Plan your retirement savings goal. See if you're on track and get a personalized monthly contribution target.</p>
-            </a>
-<a href="/bmi-calculator/" class="tool-card">
-    <div class="tool-icon">⚖️</div>
-    <h3>BMI Calculator</h3>
-    <p>Check your Body Mass Index instantly. Find out if you're in a healthy weight range.</p>
-</a>
-<a href="/percentage-calculator/" class="tool-card">
-    <div class="tool-icon">🔢</div>
-    <h3>Percentage Calculator</h3>
-    <p>Calculate percentages, percentage change, and more.</p>
-</a>
-<a href="/tip-calculator/" class="tool-card">
-    <div class="tool-icon">🍽️</div>
-    <h3>Tip Calculator</h3>
-    <p>Calculate tips and split restaurant bills.</p>
-</a>
-<a href="/discount-calculator/" class="tool-card">
-    <div class="tool-icon">🏷️</div>
-    <h3>Discount Calculator</h3>
-    <p>Calculate sale prices and savings.</p>
-</a>
-<a href="/age-calculator/" class="tool-card"><div class="tool-icon">🎂</div><h3>Age Calculator</h3><p>Calculate your exact age instantly.</p></a>
-<a href="/days-between-dates/" class="tool-card"><div class="tool-icon">📅</div><h3>Days Between Dates</h3><p>Count days between any two dates.</p></a>
-<a href="/loan-calculator/" class="tool-card"><div class="tool-icon">💳</div><h3>Loan Calculator</h3><p>Calculate loan payments and interest.</p></a>
-<a href="/sale-price-calculator/" class="tool-card"><div class="tool-icon">🛍️</div><h3>Sale Price Calculator</h3><p>Final price after discounts and tax.</p></a>
-<a href="/time-duration-calculator/" class="tool-card"><div class="tool-icon">⏱️</div><h3>Time Duration Calculator</h3><p>Hours and minutes between times.</p></a>
-<a href="/random-number-generator/" class="tool-card"><div class="tool-icon">🎲</div><h3>Random Number Generator</h3><p>Pick random numbers instantly.</p></a>
+        <section class="hero"><h1>All Free Calculators</h1><p>20 free online calculators for finance, health, math, creativity, and everyday life.</p></section>
+
+        <div class="category-section">
+            <h2 class="category-title">📊 Financial Calculators</h2>
+            <div class="tools-grid">
+                <a href="/compound-interest-calculator/" class="tool-card"><div class="tool-icon">📈</div><h3>Compound Interest Calculator</h3><p>See how your savings grow with compound interest.</p></a>
+                <a href="/sip-calculator/" class="tool-card"><div class="tool-icon">💰</div><h3>SIP Calculator</h3><p>Calculate monthly investment plan returns.</p></a>
+                <a href="/mortgage-calculator/" class="tool-card"><div class="tool-icon">🏠</div><h3>Mortgage Calculator</h3><p>Estimate monthly mortgage payments with taxes.</p></a>
+                <a href="/retirement-calculator/" class="tool-card"><div class="tool-icon">🎯</div><h3>Retirement Calculator</h3><p>Plan your retirement savings goal.</p></a>
+                <a href="/loan-calculator/" class="tool-card"><div class="tool-icon">💳</div><h3>Loan Calculator</h3><p>Calculate payments for any type of loan.</p></a>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">🧮 Health & Math Calculators</h2>
+            <div class="tools-grid">
+                <a href="/bmi-calculator/" class="tool-card"><div class="tool-icon">⚖️</div><h3>BMI Calculator</h3><p>Check your Body Mass Index instantly.</p></a>
+                <a href="/percentage-calculator/" class="tool-card"><div class="tool-icon">🔢</div><h3>Percentage Calculator</h3><p>Calculate percentages and percentage change.</p></a>
+                <a href="/scientific-calculator/" class="tool-card"><div class="tool-icon">🔬</div><h3>Scientific Calculator</h3><p>Trigonometry, logarithms, and exponents.</p></a>
+                <a href="/gpa-calculator/" class="tool-card"><div class="tool-icon">📚</div><h3>GPA Calculator</h3><p>Calculate your grade point average.</p></a>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">🛒 Everyday Calculators</h2>
+            <div class="tools-grid">
+                <a href="/discount-calculator/" class="tool-card"><div class="tool-icon">🏷️</div><h3>Discount Calculator</h3><p>Find sale prices and savings.</p></a>
+                <a href="/sale-price-calculator/" class="tool-card"><div class="tool-icon">🛍️</div><h3>Sale Price Calculator</h3><p>Final price after discounts and tax.</p></a>
+                <a href="/tip-calculator/" class="tool-card"><div class="tool-icon">🍽️</div><h3>Tip Calculator</h3><p>Calculate tips and split bills.</p></a>
+                <a href="/age-calculator/" class="tool-card"><div class="tool-icon">🎂</div><h3>Age Calculator</h3><p>Find your exact age in years and days.</p></a>
+                <a href="/days-between-dates/" class="tool-card"><div class="tool-icon">📅</div><h3>Days Between Dates</h3><p>Count days between any two dates.</p></a>
+                <a href="/word-counter/" class="tool-card"><div class="tool-icon">📝</div><h3>Word Counter</h3><p>Count words, characters, and reading time.</p></a>
+                <a href="/color-picker/" class="tool-card"><div class="tool-icon">🎨</div><h3>Color Picker</h3><p>Get HEX, RGB, and HSL values.</p></a>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">🔧 Utility & Creative Tools</h2>
+            <div class="tools-grid">
+                <a href="/password-generator/" class="tool-card"><div class="tool-icon">🔐</div><h3>Password Generator</h3><p>Generate strong random passwords.</p></a>
+                <a href="/random-number-generator/" class="tool-card"><div class="tool-icon">🎲</div><h3>Random Number Generator</h3><p>Pick random numbers in any range.</p></a>
+                <a href="/unit-converter/" class="tool-card"><div class="tool-icon">📐</div><h3>Unit Converter</h3><p>Convert between common units.</p></a>
+                <a href="/time-duration-calculator/" class="tool-card"><div class="tool-icon">⏱️</div><h3>Time Duration Calculator</h3><p>Hours and minutes between times.</p></a>
+            </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="/privacy-policy/">Privacy Policy</a>
-            <a href="/terms/">Terms of Service</a>
-            <a href="/contact/">Contact Us</a>
-            <a href="/about/">About</a>
-        </div>
-        <p>&copy; 2026 CalcGen. All rights reserved.</p>
-    </footer>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
 </body>
 </html>

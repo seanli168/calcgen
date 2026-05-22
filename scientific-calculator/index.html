@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator - Free Online Scientific Calc | CalcGen</title>
+    <meta name="description" content="Free online scientific calculator with trigonometric functions, logarithms, exponents, and more. Works just like a physical calculator — no sign-up required.">
+    <meta name="keywords" content="scientific calculator, online scientific calculator, trig calculator, logarithm calculator, exponent calculator, free scientific calc">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/scientific-calculator/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What can a scientific calculator do?", "acceptedAnswer": {"@type": "Answer", "text": "A scientific calculator handles trigonometry (sin, cos, tan), logarithms (log, ln), exponents (x², xʸ, √), factorials, pi, and parentheses for complex expressions — beyond basic arithmetic."}},
+            {"@type": "Question", "name": "Is this scientific calculator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, completely free. No sign-up, no downloads. Works right in your browser."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"}, {"@type": "ListItem", "position": 3, "name": "Scientific Calculator"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav a{color:#4b5563;text-decoration:none;margin-left:24px;font-size:15px;font-weight:500}
+        .nav a:hover{color:#2563eb}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:600px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:24px}
+        .hero h1{font-size:32px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:16px;color:#6b7280}
+        .calc-body{background:#1f2937;border-radius:16px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2);margin-bottom:32px}
+        .display{background:#111827;color:#22c55e;font-size:28px;font-family:'Courier New',monospace;padding:16px 20px;border-radius:10px;text-align:right;margin-bottom:16px;min-height:64px;word-break:break-all}
+        .btn-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+        .btn{padding:14px 8px;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity 0.2s}
+        .btn:hover{opacity:0.85}
+        .btn-num{background:#374151;color:white}
+        .btn-op{background:#2563eb;color:white}
+        .btn-func{background:#4b5563;color:white}
+        .btn-eq{background:#22c55e;color:white}
+        .btn-clr{background:#dc2626;color:white}
+        .ad-placeholder{background:white;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:120px;display:flex;align-items:center;justify-content:center}
+        .content-section{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .content-section h2{font-size:24px;font-weight:700;color:#111827;margin-bottom:12px}
+        .content-section p{color:#4b5563;margin-bottom:12px;font-size:16px}
+        .faq-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #e5e7eb}
+        .faq-item:last-child{border-bottom:none}
+        .faq-item .question{font-weight:600;color:#111827}.faq-item .answer{color:#6b7280;font-size:15px}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}.footer-links{margin-bottom:8px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Scientific Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Scientific Calculator</h1><p>Free online scientific calculator with trigonometry, logarithms, and more.</p></section>
+        
+        <div class="calc-body">
+            <div class="display" id="display">0</div>
+            <div class="btn-grid">
+                <button class="btn btn-clr" onclick="clearDisplay()">AC</button>
+                <button class="btn btn-func" onclick="appendToDisplay('(')">(</button>
+                <button class="btn btn-func" onclick="appendToDisplay(')')">)</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.PI')">π</button>
+                <button class="btn btn-func" onclick="appendToDisplay('**')">xʸ</button>
+                
+                <button class="btn btn-func" onclick="appendToDisplay('Math.sin(')">sin</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.cos(')">cos</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.tan(')">tan</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.sqrt(')">√</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.log10(')">log</button>
+                
+                <button class="btn btn-num" onclick="appendToDisplay('7')">7</button>
+                <button class="btn btn-num" onclick="appendToDisplay('8')">8</button>
+                <button class="btn btn-num" onclick="appendToDisplay('9')">9</button>
+                <button class="btn btn-op" onclick="appendToDisplay('/')">÷</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.exp(')">eˣ</button>
+                
+                <button class="btn btn-num" onclick="appendToDisplay('4')">4</button>
+                <button class="btn btn-num" onclick="appendToDisplay('5')">5</button>
+                <button class="btn btn-num" onclick="appendToDisplay('6')">6</button>
+                <button class="btn btn-op" onclick="appendToDisplay('*')">×</button>
+                <button class="btn btn-func" onclick="appendToDisplay('Math.log(')">ln</button>
+                
+                <button class="btn btn-num" onclick="appendToDisplay('1')">1</button>
+                <button class="btn btn-num" onclick="appendToDisplay('2')">2</button>
+                <button class="btn btn-num" onclick="appendToDisplay('3')">3</button>
+                <button class="btn btn-op" onclick="appendToDisplay('-')">−</button>
+                <button class="btn btn-func" onclick="factorial()">n!</button>
+                
+                <button class="btn btn-num" onclick="appendToDisplay('0')">0</button>
+                <button class="btn btn-num" onclick="appendToDisplay('.')">.</button>
+                <button class="btn btn-eq" onclick="calculate()">=</button>
+                <button class="btn btn-op" onclick="appendToDisplay('+')">+</button>
+                <button class="btn btn-clr" onclick="backspace()">⌫</button>
+            </div>
+        </div>
+        <div class="ad-placeholder">AdSense Ad Unit (Responsive Banner)</div>
+        
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <p>Click buttons to build expressions, then press = to calculate. Supports sin, cos, tan, log, ln, √, exponents, π, and factorials. Use parentheses for grouping.</p>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">What can this calculator do?</div><div class="answer">Trigonometry, logarithms, exponents, square roots, factorials, and complex expressions.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free. No sign-up.</div></div>
+        </section>
+        <section class="content-section"><h2>Related Tools</h2><ul><li><a href="/percentage-calculator/">Percentage Calculator</a></li><li><a href="/gpa-calculator/">GPA Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        let display=document.getElementById('display');
+        function appendToDisplay(val){if(display.textContent==='0'||display.textContent==='Error')display.textContent='';display.textContent+=val;}
+        function clearDisplay(){display.textContent='0';}
+        function backspace(){display.textContent=display.textContent.slice(0,-1)||'0';}
+        function factorial(){let n=parseFloat(display.textContent);if(n<0||!Number.isInteger(n)){display.textContent='Error';return}let r=1;for(let i=2;i<=n;i++)r*=i;display.textContent=r;}
+        function calculate(){
+            try{
+                let expr=display.textContent.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-');
+                let result=eval(expr);
+                display.textContent=Number.isFinite(result)?parseFloat(result.toPrecision(12)).toString():'Error';
+            }catch(e){display.textContent='Error';}
+        }
+    </script>
+</body>
+</html>
