@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalcGen - Free Online Calculators</title>
-    <meta name="description" content="Free online calculators for finance, investment, and more. Compound interest calculator, SIP calculator, mortgage calculator, retirement calculator — no sign-up required.">
+    <title>Free Online Calculators - Financial, Health, Math & Date Tools | CalcGen</title>
+    <meta name="description" content="Free online calculators for every need. Compound interest, mortgage, BMI, percentage, age, and more. No sign-up required — instant, accurate results.">
+    <meta name="keywords" content="free online calculators, financial calculator, BMI calculator, mortgage calculator, percentage calculator, age calculator, compound interest calculator">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/">
     
+    <!-- Structured Data: Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CalcGen",
+        "url": "https://calcgen.zaike888.workers.dev",
+        "description": "Free online calculators for financial planning, health, math, and everyday needs.",
+        "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CalcGen",
+        "url": "https://calcgen.zaike888.workers.dev",
+        "description": "Free online calculators for financial planning, health, math, and everyday needs.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://calcgen.zaike888.workers.dev/search/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home"}
+        ]
+    }
+    </script>
+
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
@@ -16,20 +56,45 @@
         .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
         .nav a:hover { color: #2563eb; }
         .main-container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-        .hero { text-align: center; margin-bottom: 48px; padding: 40px 0; }
-        .hero h1 { font-size: 40px; font-weight: 700; color: #111827; margin-bottom: 12px; }
-        .hero p { font-size: 18px; color: #6b7280; max-width: 550px; margin: 0 auto; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-        .tool-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
-        .tool-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); border-color: #2563eb; }
-        .tool-icon { font-size: 36px; margin-bottom: 12px; }
-        .tool-card h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px; }
-        .tool-card p { font-size: 15px; color: #6b7280; line-height: 1.5; }
-        .tool-card .badge { display: inline-block; background: #dbeafe; color: #2563eb; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin-top: 12px; }
-        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 48px; }
+        
+        /* Hero Section */
+        .hero { text-align: center; margin-bottom: 40px; padding: 40px 20px; }
+        .hero h1 { font-size: 40px; font-weight: 700; color: #111827; margin-bottom: 12px; line-height: 1.2; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 650px; margin: 0 auto; line-height: 1.7; }
+        
+        /* Category Section */
+        .category-section { margin-bottom: 40px; }
+        .category-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+        
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .tool-card { background: white; border-radius: 14px; padding: 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
+        .tool-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); border-color: #2563eb; }
+        .tool-icon { font-size: 32px; margin-bottom: 10px; }
+        .tool-card h3 { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+        .tool-card p { font-size: 14px; color: #6b7280; line-height: 1.4; }
+        .tool-card .badge { display: inline-block; background: #dbeafe; color: #2563eb; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 12px; margin-top: 8px; }
+        
+        /* Bottom content */
+        .bottom-content { background: white; border-radius: 16px; padding: 36px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .bottom-content h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 14px; }
+        .bottom-content p { font-size: 16px; color: #4b5563; margin-bottom: 12px; }
+        .bottom-content ul { margin-bottom: 16px; padding-left: 20px; color: #4b5563; }
+        .bottom-content li { margin-bottom: 6px; }
+        .faq-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
         .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
         .footer a:hover { text-decoration: underline; }
         .footer-links { margin-bottom: 8px; }
+        
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 16px; }
+            .tools-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -48,85 +113,139 @@
 
     <main class="main-container">
 
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Free Online Calculators</h1>
-            <p>Simple, free tools to help you make smarter financial decisions. No sign-up, no fees — just answers.</p>
+            <h1>Free Online Calculators for Every Need</h1>
+            <p>Fast, accurate, and completely free calculators for financial planning, health tracking, math problems, and everyday decisions. No sign-ups, no downloads — just answers when you need them.</p>
         </section>
 
-        <div class="tools-grid">
-            
-            <a href="/compound-interest-calculator/" class="tool-card">
-                <div class="tool-icon">📈</div>
-                <h3>Compound Interest Calculator</h3>
-                <p>See how your savings can grow over time with the power of compound interest. Includes chart and formula.</p>
-                <span class="badge">Popular</span>
-            </a>
-
-            <a href="/sip-calculator/" class="tool-card">
-                <div class="tool-icon">💰</div>
-                <h3>SIP Calculator</h3>
-                <p>Calculate returns from monthly systematic investment plans. Year-by-year breakdown included.</p>
-                <span class="badge">Investing</span>
-            </a>
-
-            <a href="/mortgage-calculator/" class="tool-card">
-                <div class="tool-icon">🏠</div>
-                <h3>Mortgage Calculator</h3>
-                <p>Estimate your monthly mortgage payment with taxes, insurance, and PMI. Full amortization schedule.</p>
-                <span class="badge">Home Buying</span>
-            </a>
-
-            <a href="/retirement-calculator/" class="tool-card">
-                <div class="tool-icon">🎯</div>
-                <h3>Retirement Calculator</h3>
-                <p>Plan your retirement savings goal. See if you're on track and get a personalized monthly contribution target.</p>
-                <span class="badge">Planning</span>
-            </a>
-              <a href="/bmi-calculator/" class="tool-card">
-   	 <div class="tool-icon">⚖️</div>
-   	 <h3>BMI Calculator</h3>
-   	 <p>Check your Body Mass Index instantly. Learn if you're in a healthy weight range with personalized recommendations.</p>
- 	   <span class="badge">Health</span>
-	</a>
-<a href="/percentage-calculator/" class="tool-card">
-    <div class="tool-icon">🔢</div>
-    <h3>Percentage Calculator</h3>
-    <p>Calculate percentages, percentage change, and convert percentages to decimals. Multiple modes included.</p>
-    <span class="badge">Math</span>
-</a>
-
-<a href="/tip-calculator/" class="tool-card">
-    <div class="tool-icon">🍽️</div>
-    <h3>Tip Calculator</h3>
-    <p>Calculate restaurant tips instantly. Split the bill among friends. Supports custom tip percentages.</p>
-    <span class="badge">Dining</span>
-</a>
-
-<a href="/discount-calculator/" class="tool-card">
-    <div class="tool-icon">🏷️</div>
-    <h3>Discount Calculator</h3>
-    <p>Find sale prices and savings. Calculate percent off, fixed discounts, and compare deals.</p>
-    <span class="badge">Shopping</span>
-</a>
-<a href="/age-calculator/" class="tool-card">
-    <div class="tool-icon">🎂</div>
-    <h3>Age Calculator</h3>
-    <p>Calculate your exact age in years, months, and days.</p>
-    <span class="badge">Date</span>
-</a>
-<a href="/days-between-dates/" class="tool-card">
-    <div class="tool-icon">📅</div>
-    <h3>Days Between Dates</h3>
-    <p>Find out how many days separate any two dates.</p>
-    <span class="badge">Date</span>
-</a>
-<a href="/loan-calculator/" class="tool-card">
-    <div class="tool-icon">💳</div>
-    <h3>Loan Calculator</h3>
-    <p>Calculate monthly payments for any type of loan.</p>
-    <span class="badge">Finance</span>
-</a>
+        <!-- Financial Calculators -->
+        <div class="category-section">
+            <h2 class="category-title">📊 Financial Calculators</h2>
+            <div class="tools-grid">
+                <a href="/compound-interest-calculator/" class="tool-card">
+                    <div class="tool-icon">📈</div>
+                    <h3>Compound Interest Calculator</h3>
+                    <p>See how your savings grow over time with the power of compound interest.</p>
+                    <span class="badge">Popular</span>
+                </a>
+                <a href="/sip-calculator/" class="tool-card">
+                    <div class="tool-icon">💰</div>
+                    <h3>SIP Calculator</h3>
+                    <p>Calculate returns from monthly systematic investment plans.</p>
+                    <span class="badge">Investing</span>
+                </a>
+                <a href="/mortgage-calculator/" class="tool-card">
+                    <div class="tool-icon">🏠</div>
+                    <h3>Mortgage Calculator</h3>
+                    <p>Estimate your monthly mortgage payment with taxes and insurance.</p>
+                    <span class="badge">Home Buying</span>
+                </a>
+                <a href="/retirement-calculator/" class="tool-card">
+                    <div class="tool-icon">🎯</div>
+                    <h3>Retirement Calculator</h3>
+                    <p>Plan your retirement savings and see if you're on track.</p>
+                    <span class="badge">Planning</span>
+                </a>
+                <a href="/loan-calculator/" class="tool-card">
+                    <div class="tool-icon">💳</div>
+                    <h3>Loan Calculator</h3>
+                    <p>Calculate monthly payments for auto, personal, or student loans.</p>
+                    <span class="badge">Finance</span>
+                </a>
+            </div>
         </div>
+
+        <!-- Health & Math Calculators -->
+        <div class="category-section">
+            <h2 class="category-title">🧮 Health & Math Calculators</h2>
+            <div class="tools-grid">
+                <a href="/bmi-calculator/" class="tool-card">
+                    <div class="tool-icon">⚖️</div>
+                    <h3>BMI Calculator</h3>
+                    <p>Check your Body Mass Index and learn if you're in a healthy range.</p>
+                    <span class="badge">Health</span>
+                </a>
+                <a href="/percentage-calculator/" class="tool-card">
+                    <div class="tool-icon">🔢</div>
+                    <h3>Percentage Calculator</h3>
+                    <p>Calculate percentages, percentage change, and more.</p>
+                    <span class="badge">Math</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Everyday Calculators -->
+        <div class="category-section">
+            <h2 class="category-title">🛒 Everyday Calculators</h2>
+            <div class="tools-grid">
+                <a href="/discount-calculator/" class="tool-card">
+                    <div class="tool-icon">🏷️</div>
+                    <h3>Discount Calculator</h3>
+                    <p>Find sale prices and calculate how much you save.</p>
+                    <span class="badge">Shopping</span>
+                </a>
+                <a href="/tip-calculator/" class="tool-card">
+                    <div class="tool-icon">🍽️</div>
+                    <h3>Tip Calculator</h3>
+                    <p>Calculate restaurant tips and split the bill with friends.</p>
+                    <span class="badge">Dining</span>
+                </a>
+                <a href="/age-calculator/" class="tool-card">
+                    <div class="tool-icon">🎂</div>
+                    <h3>Age Calculator</h3>
+                    <p>Find your exact age in years, months, and days.</p>
+                    <span class="badge">Date</span>
+                </a>
+                <a href="/days-between-dates/" class="tool-card">
+                    <div class="tool-icon">📅</div>
+                    <h3>Days Between Dates</h3>
+                    <p>Count the exact number of days between any two dates.</p>
+                    <span class="badge">Date</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Content for SEO -->
+        <section class="bottom-content">
+            <h2>Why Use CalcGen's Free Online Calculators?</h2>
+            <p>CalcGen offers a growing collection of <strong>free online calculators</strong> designed to give you fast, accurate answers without any hassle. Whether you're planning your finances, tracking your health, or just need a quick percentage calculation, our tools are here to help.</p>
+            <ul>
+                <li><strong>Completely Free:</strong> Every calculator on CalcGen is 100% free. No hidden fees, no premium versions.</li>
+                <li><strong>No Sign-Up Required:</strong> Start calculating immediately. We don't ask for your email or personal information.</li>
+                <li><strong>Mobile Friendly:</strong> All calculators work perfectly on phones, tablets, and desktops.</li>
+                <li><strong>Accurate & Instant:</strong> Results appear instantly with no page reloads. Formulas are based on standard mathematical and financial models.</li>
+                <li><strong>Educational Content:</strong> Each calculator includes detailed explanations, formulas, and FAQs. Our <a href="/blog/">blog</a> offers in-depth guides on compound interest, retirement planning, home buying, and more.</li>
+            </ul>
+
+            <h2>Popular Uses for Our Calculators</h2>
+            <p>Our users come to CalcGen for a wide range of needs:</p>
+            <ul>
+                <li><strong>Investors</strong> use our <a href="/compound-interest-calculator/">compound interest calculator</a> and <a href="/sip-calculator/">SIP calculator</a> to project long-term returns.</li>
+                <li><strong>Homebuyers</strong> rely on our <a href="/mortgage-calculator/">mortgage calculator</a> to estimate monthly payments with taxes and PMI.</li>
+                <li><strong>Retirement planners</strong> use the <a href="/retirement-calculator/">retirement calculator</a> with the 4% rule to set savings targets.</li>
+                <li><strong>Shoppers</strong> check our <a href="/discount-calculator/">discount calculator</a> during sales to see exactly what they'll pay.</li>
+                <li><strong>Health-conscious individuals</strong> track their <a href="/bmi-calculator/">BMI</a> to maintain a healthy weight range.</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="question">Are these calculators really free?</div>
+                <div class="answer">Yes. Every calculator on CalcGen is completely free to use with no limitations. We support the site through advertising, not by charging users.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Do I need to create an account?</div>
+                <div class="answer">No. All our calculators work instantly without sign-ups, logins, or personal information. Just visit, calculate, and go.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">How accurate are the calculations?</div>
+                <div class="answer">Our calculators use standard mathematical and financial formulas. The compound interest calculator follows the standard FV = P(1+r)^n formula. The mortgage calculator uses the amortization formula. We explain all formulas on each calculator's page.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Can I use these calculators on my phone?</div>
+                <div class="answer">Absolutely. CalcGen is fully responsive and works on smartphones, tablets, laptops, and desktops. The interface adapts to your screen size.</div>
+            </div>
+        </section>
 
     </main>
 
