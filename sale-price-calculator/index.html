@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Price Calculator - After Discount & Tax Price | CalcGen</title>
+    <meta name="description" content="Calculate the final price after discounts and sales tax. Find out exactly what you'll pay at checkout — including multiple discounts and tax rates.">
+    <meta name="keywords" content="sale price calculator, after discount price, final price calculator, discount and tax calculator, checkout price calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/sale-price-calculator/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I calculate the final price after discount and tax?", "acceptedAnswer": {"@type": "Answer", "text": "First apply the discount to the original price to get the discounted price. Then multiply the discounted price by (1 + tax rate) to get the final price. For example, a $100 item with 20% off and 8% tax: discounted = $80, final = $80 × 1.08 = $86.40."}},
+            {"@type": "Question", "name": "Can I stack multiple discounts?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our calculator supports up to three stacked discounts. You can choose whether additional discounts apply to the original price or the already-discounted price, just like real store promotions."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"}, {"@type": "ListItem", "position": 3, "name": "Sale Price Calculator"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "WebApplication", "name": "Sale Price Calculator", "url": "https://calcgen.zaike888.workers.dev/sale-price-calculator/", "description": "Calculate final price after discounts and sales tax.", "applicationCategory": "FinanceApplication", "operatingSystem": "All"}
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 28px; } }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-wrapper { position: relative; }
+        .prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; pointer-events: none; }
+        .suffix { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 14px; pointer-events: none; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input.has-prefix { padding-left: 32px; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2563eb; background: white; }
+        .calculate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        .result-item { background: #d1fae5; border: 2px solid #22c55e; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 10px; }
+        .result-item .label { font-size: 13px; color: #6b7280; text-transform: uppercase; }
+        .result-item .value { font-size: 36px; font-weight: 700; color: #15803d; margin-top: 4px; }
+        .result-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+        .result-mini { background: #f9fafb; border-radius: 8px; padding: 14px; text-align: center; }
+        .result-mini .mini-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; }
+        .result-mini .mini-value { font-size: 18px; font-weight: 600; color: #374151; }
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; margin-top: 24px; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section p { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .content-section ul { margin-bottom: 12px; padding-left: 20px; color: #4b5563; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Sale Price Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Sale Price Calculator</h1><p>Calculate the final price you'll pay at checkout — including discounts, sales tax, and stacked promotions.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Original Price ($)</label><div class="input-wrapper"><span class="prefix">$</span><input type="number" id="original-price" value="100" step="0.01" class="has-prefix"></div></div>
+                    <div class="input-group"><label>Discount 1 (%)</label><div class="input-wrapper"><input type="number" id="discount1" value="20" step="0.1"><span class="suffix">%</span></div></div>
+                    <div class="input-group"><label>Discount 2 (%) — Optional</label><div class="input-wrapper"><input type="number" id="discount2" value="0" step="0.1"><span class="suffix">%</span></div></div>
+                    <div class="input-group"><label>Sales Tax (%)</label><div class="input-wrapper"><input type="number" id="tax-rate" value="8" step="0.1"><span class="suffix">%</span></div></div>
+                    <button class="calculate-btn" onclick="calculateSale()">Calculate Final Price</button>
+                </div>
+                <div class="result-section">
+                    <div class="result-item"><div class="label">Final Price (You Pay)</div><div class="value" id="final-price">$86.40</div></div>
+                    <div class="result-mini-grid">
+                        <div class="result-mini"><div class="mini-label">After Discount</div><div class="mini-value" id="after-discount">$80.00</div></div>
+                        <div class="result-mini"><div class="mini-label">You Save</div><div class="mini-value" id="you-save">$20.00</div></div>
+                    </div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <ul><li>Enter the original price</li><li>Add up to two discounts (stacked)</li><li>Enter your local sales tax rate</li><li>See exactly what you'll pay</li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">How is the final price calculated?</div><div class="answer">Discounts are applied sequentially to the original price, then sales tax is added to the discounted total.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/discount-calculator/">Discount Calculator</a></li><li><a href="/tip-calculator/">Tip Calculator</a></li><li><a href="/percentage-calculator/">Percentage Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function calculateSale() {
+            const price = parseFloat(document.getElementById('original-price').value) || 0;
+            const d1 = parseFloat(document.getElementById('discount1').value) || 0;
+            const d2 = parseFloat(document.getElementById('discount2').value) || 0;
+            const tax = parseFloat(document.getElementById('tax-rate').value) || 0;
+            let afterD = price;
+            if (d1 > 0) afterD -= afterD * (d1 / 100);
+            if (d2 > 0) afterD -= afterD * (d2 / 100);
+            const final = afterD * (1 + tax / 100);
+            document.getElementById('final-price').textContent = '$' + final.toFixed(2);
+            document.getElementById('after-discount').textContent = '$' + afterD.toFixed(2);
+            document.getElementById('you-save').textContent = '$' + (price - afterD).toFixed(2);
+        }
+        calculateSale();
+    </script>
+</body>
+</html>

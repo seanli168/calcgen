@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator - Free Online RNG Tool | CalcGen</title>
+    <meta name="description" content="Generate random numbers instantly. Set your range, generate single or multiple numbers, and use them for contests, games, or decision-making.">
+    <meta name="keywords" content="random number generator, RNG, random number picker, lottery number generator, random integer generator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/random-number-generator/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How does a random number generator work?", "acceptedAnswer": {"@type": "Answer", "text": "Our random number generator uses JavaScript's Math.random() function to produce pseudo-random numbers within your specified range. It's suitable for everyday uses like contests, games, and decision-making — though not for cryptographic purposes."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"}, {"@type": "ListItem", "position": 3, "name": "Random Number Generator"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "WebApplication", "name": "Random Number Generator", "url": "https://calcgen.zaike888.workers.dev/random-number-generator/", "description": "Generate random numbers within any range.", "applicationCategory": "UtilityApplication", "operatingSystem": "All"}
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 28px; } }
+        .input-group { margin-bottom: 16px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-group input { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input:focus { outline: none; border-color: #2563eb; background: white; }
+        .generate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .generate-btn:hover { background: #1d4ed8; }
+        .result-display { text-align: center; }
+        .big-number { font-size: 72px; font-weight: 800; color: #2563eb; line-height: 1; margin-bottom: 12px; }
+        .result-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 12px; }
+        .result-bubble { background: #dbeafe; color: #2563eb; font-size: 20px; font-weight: 700; padding: 10px 18px; border-radius: 12px; }
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+        .content-section p, .content-section ul { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Random Number Generator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Random Number Generator</h1><p>Generate random numbers instantly. Set your range, pick single or multiple numbers — perfect for contests, games, and decision-making.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Minimum</label><input type="number" id="min-val" value="1"></div>
+                    <div class="input-group"><label>Maximum</label><input type="number" id="max-val" value="100"></div>
+                    <div class="input-group"><label>How Many Numbers?</label><input type="number" id="count" value="1" min="1" max="20"></div>
+                    <button class="generate-btn" onclick="generate()">Generate Random Number(s)</button>
+                </div>
+                <div class="result-display">
+                    <div class="big-number" id="single-result">—</div>
+                    <div class="result-list" id="multi-result"></div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <ul><li>Set the minimum and maximum range</li><li>Choose how many numbers you want</li><li>Click Generate</li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">Is this truly random?</div><div class="answer">It uses JavaScript's Math.random() — suitable for everyday use but not for cryptography or gambling.</div></div>
+            <div class="faq-item"><div class="question">Is this free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/percentage-calculator/">Percentage Calculator</a></li><li><a href="/age-calculator/">Age Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function generate() {
+            const min = parseInt(document.getElementById('min-val').value) || 1;
+            const max = parseInt(document.getElementById('max-val').value) || 100;
+            const count = Math.min(20, Math.max(1, parseInt(document.getElementById('count').value) || 1));
+            const actualMin = Math.min(min, max);
+            const actualMax = Math.max(min, max);
+            const numbers = [];
+            for (let i = 0; i < count; i++) {
+                numbers.push(Math.floor(Math.random() * (actualMax - actualMin + 1)) + actualMin);
+            }
+            if (count === 1) {
+                document.getElementById('single-result').textContent = numbers[0];
+                document.getElementById('multi-result').innerHTML = '';
+            } else {
+                document.getElementById('single-result').textContent = '—';
+                document.getElementById('multi-result').innerHTML = numbers.map(n => '<span class="result-bubble">' + n + '</span>').join('');
+            }
+        }
+        generate();
+    </script>
+</body>
+</html>

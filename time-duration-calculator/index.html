@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Duration Calculator - Calculate Hours & Minutes Between Times | CalcGen</title>
+    <meta name="description" content="Calculate exact time duration between two times. Find hours, minutes, and total minutes between any start and end time. Free and instant.">
+    <meta name="keywords" content="time duration calculator, hours between times, time difference calculator, elapsed time, hours calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/time-duration-calculator/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I calculate hours between two times?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract the start time from the end time. If the end time is earlier (e.g., crossing midnight), add 24 hours to the end time first. Our calculator handles this automatically, including overnight time spans."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"}, {"@type": "ListItem", "position": 3, "name": "Time Duration Calculator"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "WebApplication", "name": "Time Duration Calculator", "url": "https://calcgen.zaike888.workers.dev/time-duration-calculator/", "description": "Calculate hours and minutes between two times.", "applicationCategory": "LifestyleApplication", "operatingSystem": "All"}
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 28px; } }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-group input { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input:focus { outline: none; border-color: #2563eb; background: white; }
+        .calculate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        .result-display { text-align: center; }
+        .big-number { font-size: 48px; font-weight: 800; color: #2563eb; line-height: 1; margin-bottom: 4px; }
+        .big-label { font-size: 18px; color: #6b7280; margin-bottom: 16px; }
+        .result-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+        .result-mini { background: #f0f7ff; border-radius: 10px; padding: 14px; text-align: center; }
+        .result-mini .mini-value { font-size: 22px; font-weight: 700; color: #111827; }
+        .result-mini .mini-label { font-size: 11px; color: #6b7280; text-transform: uppercase; margin-top: 2px; }
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+        .content-section p, .content-section ul { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Time Duration Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Time Duration Calculator</h1><p>Calculate exactly how many hours and minutes there are between any two times — even across midnight.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div style="margin-bottom:18px;"><label style="font-weight:600;font-size:15px;color:#111827;">Start Time</label></div>
+                    <div class="input-row">
+                        <div class="input-group"><label>Hour</label><input type="number" id="start-hour" value="9" min="0" max="23"></div>
+                        <div class="input-group"><label>Minute</label><input type="number" id="start-min" value="0" min="0" max="59"></div>
+                    </div>
+                    <div style="margin-bottom:18px;"><label style="font-weight:600;font-size:15px;color:#111827;">End Time</label></div>
+                    <div class="input-row">
+                        <div class="input-group"><label>Hour</label><input type="number" id="end-hour" value="17" min="0" max="23"></div>
+                        <div class="input-group"><label>Minute</label><input type="number" id="end-min" value="30" min="0" max="59"></div>
+                    </div>
+                    <button class="calculate-btn" onclick="calculateTime()">Calculate Duration</button>
+                </div>
+                <div class="result-display">
+                    <div class="big-number" id="duration-display">8h 30m</div>
+                    <div class="big-label">total duration</div>
+                    <div class="result-mini-grid">
+                        <div class="result-mini"><div class="mini-value" id="total-minutes">510</div><div class="mini-label">Total Minutes</div></div>
+                        <div class="result-mini"><div class="mini-value" id="decimal-hours">8.50</div><div class="mini-label">Decimal Hours</div></div>
+                    </div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <ul><li>Enter the start time (hour and minute)</li><li>Enter the end time</li><li>Click Calculate — works even if end time is earlier (overnight)</li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">Does this work for overnight shifts?</div><div class="answer">Yes. If your end time is earlier than your start time (e.g., 10 PM to 6 AM), the calculator automatically adds 24 hours.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/days-between-dates/">Days Between Dates</a></li><li><a href="/age-calculator/">Age Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function calculateTime() {
+            const sh = parseInt(document.getElementById('start-hour').value) || 0;
+            const sm = parseInt(document.getElementById('start-min').value) || 0;
+            const eh = parseInt(document.getElementById('end-hour').value) || 0;
+            const em = parseInt(document.getElementById('end-min').value) || 0;
+            let startTotal = sh * 60 + sm;
+            let endTotal = eh * 60 + em;
+            if (endTotal <= startTotal) endTotal += 24 * 60;
+            const diff = endTotal - startTotal;
+            const hours = Math.floor(diff / 60);
+            const minutes = diff % 60;
+            document.getElementById('duration-display').textContent = hours + 'h ' + minutes + 'm';
+            document.getElementById('total-minutes').textContent = diff;
+            document.getElementById('decimal-hours').textContent = (diff / 60).toFixed(2);
+        }
+        calculateTime();
+    </script>
+</body>
+</html>
