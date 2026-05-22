@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator - Free Monthly Payment & Interest Calculator | CalcGen</title>
+    <meta name="description" content="Free loan calculator for any type of loan. Calculate monthly payments, total interest, and see full amortization. Works for auto loans, personal loans, and more.">
+    <meta name="keywords" content="loan calculator, personal loan calculator, auto loan calculator, monthly payment calculator, loan interest calculator, amortization calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/loan-calculator/">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I calculate loan payments?", "acceptedAnswer": {"@type": "Answer", "text": "Loan payments are calculated using the amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1], where M is the monthly payment, P is the loan amount, r is the monthly interest rate, and n is the total number of payments."}},
+            {"@type": "Question", "name": "What's the difference between APR and interest rate?", "acceptedAnswer": {"@type": "Answer", "text": "The interest rate is the cost of borrowing the principal. APR (Annual Percentage Rate) includes the interest rate plus fees and other charges, giving a more complete picture of the loan's total cost."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcgen.zaike888.workers.dev/"},
+            {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://calcgen.zaike888.workers.dev/calculators/"},
+            {"@type": "ListItem", "position": 3, "name": "Loan Calculator"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Loan Calculator",
+        "url": "https://calcgen.zaike888.workers.dev/loan-calculator/",
+        "description": "Free loan calculator for auto, personal, and other loans. Calculate monthly payments and total interest.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All"
+    }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #f8f9fa; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 24px; font-weight: 700; color: #2563eb; text-decoration: none; }
+        .nav a { color: #4b5563; text-decoration: none; margin-left: 24px; font-size: 15px; font-weight: 500; }
+        .nav a:hover { color: #2563eb; }
+        .breadcrumb { max-width: 1100px; margin: 16px auto 0; padding: 0 24px; font-size: 14px; color: #6b7280; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        .main-container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .hero p { font-size: 18px; color: #6b7280; max-width: 600px; margin: 0 auto; }
+        
+        .calculator-card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 28px; } .calculator-card { padding: 20px; } }
+        
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+        .input-wrapper { position: relative; }
+        .prefix { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; pointer-events: none; }
+        .suffix { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; pointer-events: none; }
+        .input-group input, .input-group select { width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 16px; background: #fafafa; font-family: inherit; }
+        .input-group input.has-prefix { padding-left: 32px; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #2563eb; background: white; }
+        
+        .calculate-btn { width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .calculate-btn:hover { background: #1d4ed8; }
+        
+        .result-item { background: #dbeafe; border: 2px solid #2563eb; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 10px; }
+        .result-item .label { font-size: 13px; color: #6b7280; text-transform: uppercase; }
+        .result-item .value { font-size: 36px; font-weight: 700; color: #2563eb; margin-top: 4px; }
+        .result-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .result-mini { background: #f9fafb; border-radius: 8px; padding: 14px; text-align: center; }
+        .result-mini .mini-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; }
+        .result-mini .mini-value { font-size: 18px; font-weight: 600; color: #374151; }
+        
+        .ad-placeholder { background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 10px; padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; margin-top: 16px; min-height: 250px; display: flex; align-items: center; justify-content: center; }
+        
+        .content-section { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 32px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 12px; margin-top: 24px; }
+        .content-section h2:first-child { margin-top: 0; }
+        .content-section p { color: #4b5563; margin-bottom: 12px; font-size: 16px; }
+        .faq-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item .question { font-weight: 600; color: #111827; }
+        .faq-item .answer { color: #6b7280; font-size: 15px; }
+        .footer { background: white; border-top: 1px solid #e5e7eb; padding: 24px; text-align: center; color: #6b7280; font-size: 14px; margin-top: 32px; }
+        .footer a { color: #2563eb; text-decoration: none; margin: 0 12px; }
+        .footer-links { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Loan Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Loan Calculator</h1><p>Calculate monthly payments for any loan — auto, personal, or student. See total interest and get a full payment breakdown.</p></section>
+        
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Loan Amount ($)</label><div class="input-wrapper"><span class="prefix">$</span><input type="number" id="loan-amount" value="25000" step="100" class="has-prefix"></div></div>
+                    <div class="input-group"><label>Annual Interest Rate (%)</label><div class="input-wrapper"><input type="number" id="interest-rate" value="6.5" step="0.1"><span class="suffix">%</span></div></div>
+                    <div class="input-group"><label>Loan Term (Months)</label><input type="number" id="loan-term" value="60" min="1" max="360" step="1"></div>
+                    <button class="calculate-btn" onclick="calculateLoan()">Calculate Payment</button>
+                </div>
+                <div class="result-section">
+                    <div class="result-item"><div class="label">Monthly Payment</div><div class="value" id="monthly-payment">$489.15</div></div>
+                    <div class="result-mini-grid">
+                        <div class="result-mini"><div class="mini-label">Total Repayment</div><div class="mini-value" id="total-repayment">$29,349</div></div>
+                        <div class="result-mini"><div class="mini-label">Total Interest</div><div class="mini-value" id="total-interest">$4,349</div></div>
+                    </div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <ul><li><strong>Enter loan amount</strong></li><li><strong>Enter interest rate</strong> (APR)</li><li><strong>Enter loan term</strong> in months (e.g., 60 for a 5-year loan)</li><li><strong>Click Calculate</strong></li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">How is the monthly payment calculated?</div><div class="answer">Using the standard amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1], where P is loan amount, r is monthly rate, and n is number of payments.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/mortgage-calculator/">Mortgage Calculator</a></li><li><a href="/compound-interest-calculator/">Compound Interest Calculator</a></li><li><a href="/sip-calculator/">SIP Calculator</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+
+    <script>
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('loan-amount').value) || 0;
+            const rate = parseFloat(document.getElementById('interest-rate').value) || 0;
+            const term = parseInt(document.getElementById('loan-term').value) || 1;
+            const monthlyRate = rate / 100 / 12;
+            let payment = 0;
+            if (monthlyRate > 0) {
+                payment = amount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            } else {
+                payment = amount / term;
+            }
+            const total = payment * term;
+            const interest = total - amount;
+            document.getElementById('monthly-payment').textContent = '$' + payment.toFixed(2);
+            document.getElementById('total-repayment').textContent = '$' + total.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('total-interest').textContent = '$' + interest.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        calculateLoan();
+    </script>
+</body>
+</html>
