@@ -1,105 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Home & Main Pages -->
-    <url><loc>https://calcgen.zaike888.workers.dev/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/calculators/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/about/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/privacy-policy/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/terms/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/contact/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-
-    <!-- Financial Calculators -->
-    <url><loc>https://calcgen.zaike888.workers.dev/compound-interest-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/sip-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/mortgage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/retirement-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/loan-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-    <!-- Health & Math Calculators -->
-    <url><loc>https://calcgen.zaike888.workers.dev/bmi-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/percentage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/scientific-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/gpa-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-    <!-- Everyday Calculators -->
-    <url><loc>https://calcgen.zaike888.workers.dev/discount-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/sale-price-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/tip-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/age-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/days-between-dates/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/word-counter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/color-picker/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-    <!-- Utility Tools -->
-    <url><loc>https://calcgen.zaike888.workers.dev/password-generator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/random-number-generator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/unit-converter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/time-duration-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-    <!-- Blog Articles -->
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/how-compound-interest-works/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/sip-vs-lump-sum/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/how-much-house-can-afford/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/4-percent-rule-retirement/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/what-is-bmi/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/how-to-pay-off-debt-faster/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/understanding-credit-scores/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/how-to-calculate-gpa/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/strong-password-guide/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/metric-vs-imperial/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/word-count-seo-guide/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/blog/color-theory-basics/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-</urlset>
-<url><loc>https://calcgen.zaike888.workers.dev/calorie-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://calcgen.zaike888.workers.dev/fuel-cost-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://calcgen.zaike888.workers.dev/speed-converter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url><loc>https://calcgen.zaike888.workers.dev/blog/how-to-create-calorie-deficit/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-<url><loc>https://calcgen.zaike888.workers.dev/blog/how-to-save-money-on-gas/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <!-- Spanish Pages -->
-    <url><loc>https://calcgen.zaike888.workers.dev/es/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/calculators/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/compound-interest-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/mortgage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/bmi-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/retirement-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/percentage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-compound-interest-works/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/sip-vs-lump-sum/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-much-house-can-afford/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/privacy-policy/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/terms/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/contact/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/calculators/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/</loc><lastmod>2026-01-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/compound-interest-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/sip-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/mortgage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/retirement-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/loan-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/bmi-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/calorie-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/percentage-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/scientific-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/gpa-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/discount-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/sale-price-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/tip-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/age-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/days-between-dates/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/word-counter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/color-picker/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/password-generator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/random-number-generator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/unit-converter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/time-duration-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/speed-converter/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/fuel-cost-calculator/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-compound-interest-works/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/sip-vs-lump-sum/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-much-house-can-afford/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/privacy-policy/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/terms/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://calcgen.zaike888.workers.dev/es/contact/</loc><lastmod>2026-01-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/4-percent-rule-retirement/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/what-is-bmi/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-to-pay-off-debt-faster/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/understanding-credit-scores/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-to-create-calorie-deficit/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-to-save-money-on-gas/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/strong-password-guide/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/metric-vs-imperial/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/how-to-calculate-gpa/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/word-count-seo-guide/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://calcgen.zaike888.workers.dev/es/blog/color-theory-basics/</loc><lastmod>2026-01-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
