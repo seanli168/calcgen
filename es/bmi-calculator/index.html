@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC - Índice de Masa Corporal Gratis | CalcGen</title>
+    <meta name="description" content="Calcula tu Índice de Masa Corporal (IMC) al instante. Descubre si estás en un rango saludable. Unidades métricas e imperiales. Gratis.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/bmi-calculator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/bmi-calculator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/bmi-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/bmi-calculator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Calculadora de IMC"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .nav a:hover{color:#2563eb}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .unit-toggle{display:flex;margin-bottom:24px;border-radius:10px;overflow:hidden;border:2px solid #e5e7eb}
+        .unit-toggle button{flex:1;padding:12px;border:none;background:white;font-size:15px;font-weight:600;cursor:pointer;color:#6b7280;font-family:inherit}
+        .unit-toggle button.active{background:#2563eb;color:white}
+        .input-group{margin-bottom:18px}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-group input{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input:focus{outline:none;border-color:#2563eb;background:white}
+        .calculate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+        .result-display{text-align:center}
+        .bmi-number{font-size:64px;font-weight:800;color:#2563eb;line-height:1}
+        .bmi-label{font-size:18px;color:#6b7280;margin-bottom:16px}
+        .bmi-category{display:inline-block;padding:8px 20px;border-radius:24px;font-size:15px;font-weight:700;margin-bottom:16px}
+        .bmi-normal{background:#d1fae5;color:#15803d}
+        .bmi-overweight{background:#fef3c7;color:#d97706}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .content-section{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .content-section h2{font-size:24px;font-weight:700;color:#111827;margin-bottom:12px}
+        .content-section p{color:#4b5563;margin-bottom:12px;font-size:16px}
+        .faq-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #e5e7eb}
+        .faq-item:last-child{border-bottom:none}
+        .faq-item .question{font-weight:600;color:#111827}.faq-item .answer{color:#6b7280;font-size:15px}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/bmi-calculator/">EN</a><a href="/es/bmi-calculator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Calculadora de IMC</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Calculadora de IMC</h1><p>Calcula tu Índice de Masa Corporal al instante. Descubre si estás en un peso saludable según tu altura.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="unit-toggle" id="unit-toggle">
+                        <button class="active" onclick="cambiarUnidad('metric',this)">Métrico (kg/cm)</button>
+                        <button onclick="cambiarUnidad('imperial',this)">Imperial (lbs/ft)</button>
+                    </div>
+                    <div id="metric-inputs">
+                        <div class="input-group"><label>Peso (kg)</label><input type="number" id="weight-kg" value="70" min="20" max="500" step="0.1"></div>
+                        <div class="input-group"><label>Altura (cm)</label><input type="number" id="height-cm" value="175" min="50" max="280" step="0.1"></div>
+                    </div>
+                    <div id="imperial-inputs" style="display:none">
+                        <div class="input-group"><label>Peso (lbs)</label><input type="number" id="weight-lbs" value="154" min="44" max="1100" step="0.1"></div>
+                        <div class="input-group"><label>Altura (pulgadas)</label><input type="number" id="height-in" value="69" min="20" max="110" step="0.1"></div>
+                    </div>
+                    <button class="calculate-btn" onclick="calcularIMC()">Calcular IMC</button>
+                </div>
+                <div class="result-display">
+                    <div class="bmi-number" id="bmi-value">22.9</div>
+                    <div class="bmi-label">Tu IMC</div>
+                    <div class="bmi-category bmi-normal" id="bmi-category">Peso Normal</div>
+                    <div class="ad-placeholder">Anuncio AdSense (300×250)</div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section">
+            <h2>¿Qué es el IMC?</h2>
+            <p>El Índice de Masa Corporal es una medida que relaciona tu peso con tu altura. Un IMC entre 18.5 y 24.9 se considera saludable para adultos.</p>
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-item"><div class="question">¿Es precisa esta calculadora?</div><div class="answer">El IMC es una herramienta de detección. No distingue entre músculo y grasa. Atletas pueden tener IMC alto con baja grasa corporal.</div></div>
+            <div class="faq-item"><div class="question">¿Es gratis?</div><div class="answer">Sí, completamente gratis.</div></div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        let unidad='metric';
+        function cambiarUnidad(u,btn){unidad=u;document.querySelectorAll('#unit-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('metric-inputs').style.display=u==='metric'?'block':'none';document.getElementById('imperial-inputs').style.display=u==='imperial'?'block':'none';calcularIMC()}
+        function calcularIMC(){
+            let bmi;
+            if(unidad==='metric'){
+                const w=parseFloat(document.getElementById('weight-kg').value)||0;
+                const h=parseFloat(document.getElementById('height-cm').value)/100||0;
+                bmi=w>0&&h>0?w/(h*h):0;
+            }else{
+                const w=parseFloat(document.getElementById('weight-lbs').value)||0;
+                const h=parseFloat(document.getElementById('height-in').value)||0;
+                bmi=w>0&&h>0?(w/(h*h))*703:0;
+            }
+            document.getElementById('bmi-value').textContent=bmi>0?bmi.toFixed(1):'—';
+            const cat=document.getElementById('bmi-category');
+            cat.classList.remove('bmi-normal','bmi-overweight');
+            if(bmi<=0)cat.textContent='Ingresa tus datos';
+            else if(bmi<18.5)cat.textContent='Bajo Peso';
+            else if(bmi<25){cat.textContent='Peso Normal';cat.classList.add('bmi-normal')}
+            else{cat.textContent='Sobrepeso';cat.classList.add('bmi-overweight')}
+        }
+        calcularIMC();
+    </script>
+</body>
+</html>
