@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palabras - Cuenta Palabras y Caracteres Gratis | CalcGen</title>
+    <meta name="description" content="Cuenta palabras, caracteres, oraciones y párrafos al instante. Ve el tiempo estimado de lectura. Ideal para escritores y SEO.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/word-counter/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/word-counter/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/word-counter/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/word-counter/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Contador de Palabras"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        textarea{width:100%;height:220px;padding:16px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;resize:vertical;font-family:inherit;background:#fafafa}
+        textarea:focus{outline:none;border-color:#2563eb;background:white}
+        .clear-btn{width:100%;padding:12px;background:#fee2e2;color:#dc2626;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px}
+        .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .stat-item{background:#f0f7ff;border-radius:10px;padding:16px;text-align:center}
+        .stat-item .stat-value{font-size:28px;font-weight:700;color:#2563eb}
+        .stat-item .stat-label{font-size:12px;color:#6b7280;text-transform:uppercase;margin-top:2px}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/word-counter/">EN</a><a href="/es/word-counter/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Contador de Palabras</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Contador de Palabras</h1><p>Cuenta palabras, caracteres, oraciones y párrafos al instante. Ve el tiempo estimado de lectura.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div><textarea id="text-input" placeholder="Pega o escribe tu texto aquí..." oninput="contar()">El veloz zorro marrón salta sobre el perro perezoso.</textarea><button class="clear-btn" onclick="document.getElementById('text-input').value='';contar()">Borrar Texto</button></div>
+                <div>
+                    <div class="stats-grid">
+                        <div class="stat-item"><div class="stat-value" id="word-count">0</div><div class="stat-label">Palabras</div></div>
+                        <div class="stat-item"><div class="stat-value" id="char-count">0</div><div class="stat-label">Caracteres</div></div>
+                        <div class="stat-item"><div class="stat-value" id="char-no-space">0</div><div class="stat-label">Sin Espacios</div></div>
+                        <div class="stat-item"><div class="stat-value" id="sentence-count">0</div><div class="stat-label">Oraciones</div></div>
+                        <div class="stat-item"><div class="stat-value" id="para-count">0</div><div class="stat-label">Párrafos</div></div>
+                        <div class="stat-item"><div class="stat-value" id="read-time">0 min</div><div class="stat-label">Tiempo Lectura</div></div>
+                    </div>
+                    <div class="ad-placeholder">Anuncio AdSense</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function contar(){const t=document.getElementById('text-input').value.trim();const w=t?t.split(/\s+/).length:0;const c=t.length;const cn=t.replace(/\s/g,'').length;const s=t?t.split(/[.!?]+/).filter(x=>x.trim().length>0).length:0;const p=t?t.split(/\n\s*\n/).filter(x=>x.trim().length>0).length:0;const rt=Math.max(1,Math.ceil(w/200));document.getElementById('word-count').textContent=w;document.getElementById('char-count').textContent=c;document.getElementById('char-no-space').textContent=cn;document.getElementById('sentence-count').textContent=s;document.getElementById('para-count').textContent=p;document.getElementById('read-time').textContent=rt+' min'}contar();
+    </script>
+</body>
+</html>

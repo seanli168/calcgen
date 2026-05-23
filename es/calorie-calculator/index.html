@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorías - Necesidades Diarias | CalcGen</title>
+    <meta name="description" content="Calcula tus calorías diarias para perder, mantener o ganar peso. Basado en la ecuación Mifflin-St Jeor. Unidades métricas e imperiales.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/calorie-calculator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/calorie-calculator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/calorie-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/calorie-calculator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Calculadora de Calorías"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .unit-toggle{display:flex;margin-bottom:20px;border-radius:10px;overflow:hidden;border:2px solid #e5e7eb}
+        .unit-toggle button{flex:1;padding:12px;border:none;background:white;font-size:15px;font-weight:600;cursor:pointer;color:#6b7280;font-family:inherit}
+        .unit-toggle button.active{background:#2563eb;color:white}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-group input,.input-group select{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input:focus,.input-group select:focus{outline:none;border-color:#2563eb;background:white}
+        .input-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .calculate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+        .result-display{text-align:center}
+        .big-calorie{font-size:56px;font-weight:800;color:#2563eb;line-height:1}
+        .calorie-label{font-size:16px;color:#6b7280;margin-bottom:16px}
+        .result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+        .result-mini{background:#f0f7ff;border-radius:10px;padding:14px;text-align:center}
+        .result-mini .mini-value{font-size:20px;font-weight:700;color:#111827}
+        .result-mini .mini-label{font-size:11px;color:#6b7280;text-transform:uppercase;margin-top:2px}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/calorie-calculator/">EN</a><a href="/es/calorie-calculator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Calculadora de Calorías</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Calculadora de Calorías</h1><p>Calcula tus calorías diarias para perder, mantener o ganar peso. Basado en la ecuación Mifflin-St Jeor.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div>
+                    <div class="unit-toggle" id="unit-toggle"><button class="active" onclick="cambiarUnidad('metric',this)">Métrico (kg/cm)</button><button onclick="cambiarUnidad('imperial',this)">Imperial (lbs/ft)</button></div>
+                    <div class="input-group"><label>Sexo</label><select id="sex"><option value="male">Hombre</option><option value="female">Mujer</option></select></div>
+                    <div class="input-group"><label>Edad</label><input type="number" id="age" value="30" min="15" max="100"></div>
+                    <div id="metric-inputs"><div class="input-row"><div class="input-group"><label>Peso (kg)</label><input type="number" id="weight-kg" value="70" min="30" max="300" step="0.1"></div><div class="input-group"><label>Altura (cm)</label><input type="number" id="height-cm" value="175" min="100" max="250"></div></div></div>
+                    <div id="imperial-inputs" style="display:none"><div class="input-row"><div class="input-group"><label>Peso (lbs)</label><input type="number" id="weight-lbs" value="154" min="66" max="660" step="0.1"></div></div><div class="input-row"><div class="input-group"><label>Altura (ft)</label><input type="number" id="height-ft" value="5" min="3" max="8"></div><div class="input-group"><label>Pulgadas</label><input type="number" id="height-in" value="9" min="0" max="11"></div></div></div>
+                    <div class="input-group"><label>Nivel de Actividad</label><select id="activity"><option value="1.2">Sedentario</option><option value="1.375">Ligero (1-3 días/sem)</option><option value="1.55" selected>Moderado (3-5 días/sem)</option><option value="1.725">Intenso (6-7 días/sem)</option><option value="1.9">Atleta</option></select></div>
+                    <button class="calculate-btn" onclick="calcular()">Calcular Calorías</button>
+                </div>
+                <div class="result-display">
+                    <div class="big-calorie" id="tdee">2,453</div>
+                    <div class="calorie-label">calorías/día (Mantenimiento)</div>
+                    <div class="result-grid"><div class="result-mini"><div class="mini-value" id="bmr">1,781</div><div class="mini-label">TMB (Reposo)</div></div><div class="result-mini"><div class="mini-value" id="weight-loss">1,953</div><div class="mini-label">Perder Peso (-500)</div></div><div class="result-mini"><div class="mini-value" id="weight-gain">2,953</div><div class="mini-label">Ganar Peso (+500)</div></div></div>
+                    <div class="ad-placeholder">Anuncio AdSense</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        let unidad='metric';
+        function cambiarUnidad(u,btn){unidad=u;document.querySelectorAll('#unit-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('metric-inputs').style.display=u==='metric'?'block':'none';document.getElementById('imperial-inputs').style.display=u==='imperial'?'block':'none';calcular()}
+        function calcular(){let w,h;if(unidad==='metric'){w=parseFloat(document.getElementById('weight-kg').value)||0;h=parseFloat(document.getElementById('height-cm').value)||0}else{const wl=parseFloat(document.getElementById('weight-lbs').value)||0;w=wl*0.453592;const ft=parseInt(document.getElementById('height-ft').value)||0,inc=parseInt(document.getElementById('height-in').value)||0;h=(ft*12+inc)*2.54}const a=parseInt(document.getElementById('age').value)||0;const s=document.getElementById('sex').value;const act=parseFloat(document.getElementById('activity').value);let bmr=s==='male'?10*w+6.25*h-5*a+5:10*w+6.25*h-5*a-161;const tdee=Math.round(bmr*act);document.getElementById('bmr').textContent=Math.round(bmr).toLocaleString();document.getElementById('tdee').textContent=tdee.toLocaleString();document.getElementById('weight-loss').textContent=Math.round(tdee-500).toLocaleString();document.getElementById('weight-gain').textContent=Math.round(tdee+500).toLocaleString()}calcular();
+    </script>
+</body>
+</html>

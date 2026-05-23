@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números Aleatorios Gratis | CalcGen</title>
+    <meta name="description" content="Genera números aleatorios dentro de cualquier rango. Ideal para sorteos, juegos y decisiones. Resultados instantáneos.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/random-number-generator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/random-number-generator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/random-number-generator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/random-number-generator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Generador de Números Aleatorios"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-group input{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input:focus{outline:none;border-color:#2563eb;background:white}
+        .generate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+        .result-display{text-align:center}
+        .big-number{font-size:72px;font-weight:800;color:#2563eb;line-height:1;margin-bottom:12px}
+        .result-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:12px}
+        .result-bubble{background:#dbeafe;color:#2563eb;font-size:20px;font-weight:700;padding:10px 18px;border-radius:12px}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/random-number-generator/">EN</a><a href="/es/random-number-generator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Generador de Números</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Generador de Números Aleatorios</h1><p>Genera números aleatorios dentro de cualquier rango. Perfecto para sorteos y juegos.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Mínimo</label><input type="number" id="min-val" value="1"></div>
+                    <div class="input-group"><label>Máximo</label><input type="number" id="max-val" value="100"></div>
+                    <div class="input-group"><label>¿Cuántos Números?</label><input type="number" id="count" value="1" min="1" max="20"></div>
+                    <button class="generate-btn" onclick="generar()">Generar</button>
+                </div>
+                <div class="result-display">
+                    <div class="big-number" id="single-result">—</div>
+                    <div class="result-list" id="multi-result"></div>
+                    <div class="ad-placeholder">Anuncio AdSense</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function generar(){const min=Math.min(parseInt(document.getElementById('min-val').value)||1,parseInt(document.getElementById('max-val').value)||100);const max=Math.max(parseInt(document.getElementById('min-val').value)||1,parseInt(document.getElementById('max-val').value)||100);const count=Math.min(20,Math.max(1,parseInt(document.getElementById('count').value)||1));const nums=[];for(let i=0;i<count;i++)nums.push(Math.floor(Math.random()*(max-min+1))+min);if(count===1){document.getElementById('single-result').textContent=nums[0];document.getElementById('multi-result').innerHTML=''}else{document.getElementById('single-result').textContent='—';document.getElementById('multi-result').innerHTML=nums.map(n=>'<span class="result-bubble">'+n+'</span>').join('')}}generar();
+    </script>
+</body>
+</html>

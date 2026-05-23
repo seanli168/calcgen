@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de GPA - Promedio de Calificaciones | CalcGen</title>
+    <meta name="description" content="Calcula tu GPA (promedio de calificaciones) al instante. Soporta escalas 4.0 y 5.0. Añade cursos y calcula tu promedio ponderado.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/gpa-calculator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/gpa-calculator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/gpa-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/gpa-calculator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Calculadora de GPA"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .course-row{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin-bottom:8px;align-items:end}
+        @media(max-width:480px){.course-row{grid-template-columns:1fr 1fr}}
+        .input-group{margin-bottom:0}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:4px}
+        .input-group input,.input-group select{width:100%;padding:10px 14px;border:2px solid #e5e7eb;border-radius:8px;font-size:15px;background:#fafafa;font-family:inherit}
+        .input-group input:focus,.input-group select:focus{outline:none;border-color:#2563eb;background:white}
+        .remove-btn{background:#fee2e2;color:#dc2626;border:none;padding:10px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600}
+        .add-btn{width:100%;padding:12px;background:#f0f7ff;color:#2563eb;border:2px dashed #2563eb;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin:12px 0}
+        .calculate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer}
+        .result-display{text-align:center}
+        .big-gpa{font-size:72px;font-weight:800;color:#2563eb;line-height:1}
+        .gpa-label{font-size:18px;color:#6b7280;margin-bottom:16px}
+        .result-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .result-mini{background:#f0f7ff;border-radius:10px;padding:14px;text-align:center}
+        .result-mini .mini-value{font-size:22px;font-weight:700}
+        .result-mini .mini-label{font-size:11px;color:#6b7280;text-transform:uppercase;margin-top:2px}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/gpa-calculator/">EN</a><a href="/es/gpa-calculator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Calculadora de GPA</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Calculadora de GPA</h1><p>Calcula tu promedio de calificaciones (GPA). Añade cursos y obtén tu GPA al instante.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div>
+                    <div id="courses-container">
+                        <div class="course-row">
+                            <div class="input-group"><label>Curso</label><input type="text" placeholder="Ej: Matemáticas" class="course-name"></div>
+                            <div class="input-group"><label>Nota</label><select class="course-grade"><option value="4.0">A (4.0)</option><option value="3.7">A- (3.7)</option><option value="3.3">B+ (3.3)</option><option value="3.0" selected>B (3.0)</option><option value="2.7">B- (2.7)</option><option value="2.3">C+ (2.3)</option><option value="2.0">C (2.0)</option><option value="1.7">C- (1.7)</option><option value="1.3">D+ (1.3)</option><option value="1.0">D (1.0)</option><option value="0.0">F (0.0)</option></select></div>
+                            <div class="input-group"><label>Créditos</label><input type="number" class="course-credits" value="3" min="0.5" max="10" step="0.5"></div>
+                        </div>
+                    </div>
+                    <button class="add-btn" onclick="añadirCurso()">+ Añadir Otro Curso</button>
+                    <button class="calculate-btn" onclick="calcularGPA()">Calcular GPA</button>
+                </div>
+                <div class="result-display">
+                    <div class="big-gpa" id="gpa-result">3.00</div>
+                    <div class="gpa-label">Tu GPA</div>
+                    <div class="result-mini-grid"><div class="result-mini"><div class="mini-value" id="total-credits">3</div><div class="mini-label">Total Créditos</div></div><div class="result-mini"><div class="mini-value" id="total-points">9.00</div><div class="mini-label">Puntos</div></div></div>
+                    <div class="ad-placeholder">Anuncio AdSense</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function añadirCurso(){const c=document.getElementById('courses-container');const r=document.createElement('div');r.className='course-row';r.innerHTML='<div class="input-group"><label>Curso</label><input type="text" placeholder="Ej: Inglés" class="course-name"></div><div class="input-group"><label>Nota</label><select class="course-grade"><option value="4.0">A (4.0)</option><option value="3.0" selected>B (3.0)</option><option value="2.0">C (2.0)</option><option value="1.0">D (1.0)</option><option value="0.0">F (0.0)</option></select></div><div class="input-group"><label>Créditos</label><input type="number" class="course-credits" value="3" min="0.5" max="10" step="0.5"></div><button class="remove-btn" onclick="this.parentElement.remove()">✕</button>';c.appendChild(r)}
+        function calcularGPA(){const rows=document.querySelectorAll('.course-row');let tp=0,tc=0;rows.forEach(r=>{const g=parseFloat(r.querySelector('.course-grade').value);const c=parseFloat(r.querySelector('.course-credits').value)||0;tp+=g*c;tc+=c});const gpa=tc>0?tp/tc:0;document.getElementById('gpa-result').textContent=gpa.toFixed(2);document.getElementById('total-credits').textContent=tc;document.getElementById('total-points').textContent=tp.toFixed(2)}calcularGPA();
+    </script>
+</body>
+</html>

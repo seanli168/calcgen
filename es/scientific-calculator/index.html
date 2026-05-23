@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica Gratis en Línea | CalcGen</title>
+    <meta name="description" content="Calculadora científica gratis con trigonometría, logaritmos, exponentes y más. Funciona como una calculadora real. Sin registro.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/scientific-calculator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/scientific-calculator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/scientific-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/scientific-calculator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Calculadora Científica"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:600px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:600px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:24px}
+        .hero h1{font-size:32px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:16px;color:#6b7280}
+        .calc-body{background:#1f2937;border-radius:16px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2);margin-bottom:32px}
+        .display{background:#111827;color:#22c55e;font-size:28px;font-family:'Courier New',monospace;padding:16px 20px;border-radius:10px;text-align:right;margin-bottom:16px;min-height:64px;word-break:break-all}
+        .btn-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+        .btn{padding:14px 8px;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+        .btn:hover{opacity:0.85}
+        .btn-num{background:#374151;color:white}
+        .btn-op{background:#2563eb;color:white}
+        .btn-func{background:#4b5563;color:white}
+        .btn-eq{background:#22c55e;color:white}
+        .btn-clr{background:#dc2626;color:white}
+        .ad-placeholder{background:white;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:120px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/scientific-calculator/">EN</a><a href="/es/scientific-calculator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Calculadora Científica</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Calculadora Científica</h1><p>Calculadora científica gratis con trigonometría, logaritmos y más.</p></section>
+        <div class="calc-body">
+            <div class="display" id="display">0</div>
+            <div class="btn-grid">
+                <button class="btn btn-clr" onclick="borrar()">AC</button>
+                <button class="btn btn-func" onclick="agregar('(')">(</button>
+                <button class="btn btn-func" onclick="agregar(')')">)</button>
+                <button class="btn btn-func" onclick="agregar('Math.PI')">π</button>
+                <button class="btn btn-func" onclick="agregar('**')">xʸ</button>
+                <button class="btn btn-func" onclick="agregar('Math.sin(')">sin</button>
+                <button class="btn btn-func" onclick="agregar('Math.cos(')">cos</button>
+                <button class="btn btn-func" onclick="agregar('Math.tan(')">tan</button>
+                <button class="btn btn-func" onclick="agregar('Math.sqrt(')">√</button>
+                <button class="btn btn-func" onclick="agregar('Math.log10(')">log</button>
+                <button class="btn btn-num" onclick="agregar('7')">7</button>
+                <button class="btn btn-num" onclick="agregar('8')">8</button>
+                <button class="btn btn-num" onclick="agregar('9')">9</button>
+                <button class="btn btn-op" onclick="agregar('/')">÷</button>
+                <button class="btn btn-func" onclick="agregar('Math.exp(')">eˣ</button>
+                <button class="btn btn-num" onclick="agregar('4')">4</button>
+                <button class="btn btn-num" onclick="agregar('5')">5</button>
+                <button class="btn btn-num" onclick="agregar('6')">6</button>
+                <button class="btn btn-op" onclick="agregar('*')">×</button>
+                <button class="btn btn-func" onclick="agregar('Math.log(')">ln</button>
+                <button class="btn btn-num" onclick="agregar('1')">1</button>
+                <button class="btn btn-num" onclick="agregar('2')">2</button>
+                <button class="btn btn-num" onclick="agregar('3')">3</button>
+                <button class="btn btn-op" onclick="agregar('-')">−</button>
+                <button class="btn btn-func" onclick="factorial()">n!</button>
+                <button class="btn btn-num" onclick="agregar('0')">0</button>
+                <button class="btn btn-num" onclick="agregar('.')">.</button>
+                <button class="btn btn-eq" onclick="calcular()">=</button>
+                <button class="btn btn-op" onclick="agregar('+')">+</button>
+                <button class="btn btn-clr" onclick="retroceder()">⌫</button>
+            </div>
+        </div>
+        <div class="ad-placeholder">Anuncio AdSense</div>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        let d=document.getElementById('display');
+        function agregar(v){if(d.textContent==='0'||d.textContent==='Error')d.textContent='';d.textContent+=v}
+        function borrar(){d.textContent='0'}
+        function retroceder(){d.textContent=d.textContent.slice(0,-1)||'0'}
+        function factorial(){let n=parseFloat(d.textContent);if(n<0||!Number.isInteger(n)){d.textContent='Error';return}let r=1;for(let i=2;i<=n;i++)r*=i;d.textContent=r}
+        function calcular(){try{let e=d.textContent.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-');let r=eval(e);d.textContent=Number.isFinite(r)?parseFloat(r.toPrecision(12)).toString():'Error'}catch(e){d.textContent='Error'}}
+    </script>
+</body>
+</html>

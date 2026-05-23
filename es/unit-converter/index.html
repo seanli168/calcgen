@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades - Longitud, Peso, Temperatura | CalcGen</title>
+    <meta name="description" content="Convierte entre unidades métricas e imperiales. Longitud, peso y temperatura. Millas a km, libras a kg, Fahrenheit a Celsius. Gratis.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/unit-converter/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/unit-converter/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/unit-converter/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/unit-converter/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Conversor de Unidades"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .category-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+        .cat-tab{padding:10px 16px;border:2px solid #e5e7eb;border-radius:10px;background:white;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;color:#6b7280}
+        .cat-tab.active{background:#2563eb;color:white;border-color:#2563eb}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .converter-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:end}
+        @media(max-width:640px){.converter-grid{grid-template-columns:1fr}}
+        .input-group{margin-bottom:0}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-group input,.input-group select{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input:focus,.input-group select:focus{outline:none;border-color:#2563eb;background:white}
+        .swap-btn{background:#f0f7ff;border:2px solid #e5e7eb;border-radius:50%;width:40px;height:40px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+        .result-value{font-size:28px;font-weight:700;color:#2563eb;padding:12px 14px;background:#f0f7ff;border-radius:10px;text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:24px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/unit-converter/">EN</a><a href="/es/unit-converter/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Conversor de Unidades</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Conversor de Unidades</h1><p>Convierte entre unidades métricas e imperiales. Longitud, peso y temperatura.</p></section>
+        <section class="calculator-card">
+            <div class="category-tabs" id="cat-tabs">
+                <button class="cat-tab active" data-cat="length">📏 Longitud</button>
+                <button class="cat-tab" data-cat="weight">⚖️ Peso</button>
+                <button class="cat-tab" data-cat="temperature">🌡️ Temperatura</button>
+            </div>
+            <div class="converter-grid">
+                <div class="input-group"><label>De</label><input type="number" id="from-value" value="1" step="any" oninput="convertir()"><select id="from-unit"></select></div>
+                <button class="swap-btn" onclick="intercambiar()">⇄</button>
+                <div><label style="font-weight:600;font-size:14px;color:#374151;margin-bottom:6px;display:block">A</label><div class="result-value" id="to-value">—</div><select id="to-unit" style="width:100%;margin-top:6px" onchange="convertir()"></select></div>
+            </div>
+            <div class="ad-placeholder">Anuncio AdSense</div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        const unidades={length:[{n:'Metros (m)',f:1},{n:'Kilómetros (km)',f:1000},{n:'Centímetros (cm)',f:0.01},{n:'Millas (mi)',f:1609.34},{n:'Pies (ft)',f:0.3048},{n:'Pulgadas (in)',f:0.0254}],weight:[{n:'Kilogramos (kg)',f:1},{n:'Gramos (g)',f:0.001},{n:'Libras (lbs)',f:0.453592},{n:'Onzas (oz)',f:0.0283495}],temperature:null};
+        let catActual='length';
+        function poblar(cat){
+            const fs=document.getElementById('from-unit'),ts=document.getElementById('to-unit');
+            fs.innerHTML='';ts.innerHTML='';
+            if(cat==='temperature'){['Celsius (°C)','Fahrenheit (°F)','Kelvin (K)'].forEach((u,i)=>{fs.innerHTML+='<option value="'+i+'">'+u+'</option>';ts.innerHTML+='<option value="'+i+'">'+u+'</option>'});ts.value=1}
+            else{unidades[cat].forEach((u,i)=>{fs.innerHTML+='<option value="'+i+'">'+u.n+'</option>';ts.innerHTML+='<option value="'+i+'">'+u.n+'</option>'});ts.value=Math.min(3,unidades[cat].length-1)}
+        }
+        function convertir(){
+            const v=parseFloat(document.getElementById('from-value').value)||0;let r;
+            if(catActual==='temperature'){
+                const fi=parseInt(document.getElementById('from-unit').value),ti=parseInt(document.getElementById('to-unit').value);let c;
+                if(fi===0)c=v;else if(fi===1)c=(v-32)*5/9;else c=v-273.15;
+                if(ti===0)r=c;else if(ti===1)r=c*9/5+32;else r=c+273.15;
+            }else{const ff=unidades[catActual][parseInt(document.getElementById('from-unit').value)].f,tf=unidades[catActual][parseInt(document.getElementById('to-unit').value)].f;r=v*ff/tf}
+            document.getElementById('to-value').textContent=parseFloat(r.toPrecision(6)).toString()
+        }
+        function intercambiar(){const fs=document.getElementById('from-unit'),ts=document.getElementById('to-unit');const t=fs.value;fs.value=ts.value;ts.value=t;convertir()}
+        document.getElementById('cat-tabs').addEventListener('click',function(e){if(e.target.classList.contains('cat-tab')){document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');catActual=e.target.getAttribute('data-cat');poblar(catActual);convertir()}});
+        poblar('length');convertir();
+    </script>
+</body>
+</html>

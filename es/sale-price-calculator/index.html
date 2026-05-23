@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precio Final - Descuentos e Impuestos | CalcGen</title>
+    <meta name="description" content="Calcula el precio final después de descuentos e impuestos. Aplica múltiples descuentos y añade el IVA. Gratis.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/es/sale-price-calculator/">
+    <link rel="alternate" hreflang="en" href="https://calcgen.zaike888.workers.dev/sale-price-calculator/">
+    <link rel="alternate" hreflang="es" href="https://calcgen.zaike888.workers.dev/es/sale-price-calculator/">
+    <link rel="alternate" hreflang="x-default" href="https://calcgen.zaike888.workers.dev/sale-price-calculator/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calcgen.zaike888.workers.dev/es/"},{"@type":"ListItem","position":2,"name":"Calculadoras","item":"https://calcgen.zaike888.workers.dev/es/calculators/"},{"@type":"ListItem","position":3,"name":"Calculadora de Precio Final"}]}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav{display:flex;align-items:center;gap:20px}
+        .nav a{color:#4b5563;text-decoration:none;font-size:15px;font-weight:500}
+        .lang-switch{display:flex;gap:6px;margin-left:12px}
+        .lang-switch a{padding:6px 10px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;background:#f0f7ff;color:#2563eb}
+        .lang-switch a.active{background:#2563eb;color:white}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-wrapper{position:relative}
+        .prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:16px;pointer-events:none}
+        .suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:14px;pointer-events:none}
+        .input-group input{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input.has-prefix{padding-left:32px}
+        .input-group input:focus{outline:none;border-color:#2563eb;background:white}
+        .calculate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+        .result-item{background:#d1fae5;border:2px solid #22c55e;border-radius:10px;padding:20px;text-align:center;margin-bottom:10px}
+        .result-item .label{font-size:13px;color:#6b7280;text-transform:uppercase}
+        .result-item .value{font-size:36px;font-weight:700;color:#15803d;margin-top:4px}
+        .result-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .result-mini{background:#f9fafb;border-radius:8px;padding:14px;text-align:center}
+        .result-mini .mini-label{font-size:11px;color:#9ca3af;text-transform:uppercase}
+        .result-mini .mini-value{font-size:18px;font-weight:600;color:#374151}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/es/" class="logo">CalcGen</a><nav class="nav"><a href="/es/">Inicio</a><a href="/es/calculators/">Calculadoras</a><a href="/es/blog/">Blog</a><div class="lang-switch"><a href="/sale-price-calculator/">EN</a><a href="/es/sale-price-calculator/" class="active">ES</a></div></nav></div></header>
+    <div class="breadcrumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/calculators/">Calculadoras</a> &rsaquo; <strong>Calculadora de Precio Final</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Calculadora de Precio Final</h1><p>Calcula el precio después de descuentos e impuestos. Aplica hasta dos descuentos y añade IVA.</p></section>
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Precio Original ($)</label><div class="input-wrapper"><span class="prefix">$</span><input type="number" id="original-price" value="100" step="0.01" class="has-prefix"></div></div>
+                    <div class="input-group"><label>Descuento 1 (%)</label><div class="input-wrapper"><input type="number" id="discount1" value="20" step="0.1"><span class="suffix">%</span></div></div>
+                    <div class="input-group"><label>Descuento 2 (%) — Opcional</label><div class="input-wrapper"><input type="number" id="discount2" value="0" step="0.1"><span class="suffix">%</span></div></div>
+                    <div class="input-group"><label>Impuesto (%)</label><div class="input-wrapper"><input type="number" id="tax-rate" value="8" step="0.1"><span class="suffix">%</span></div></div>
+                    <button class="calculate-btn" onclick="calcular()">Calcular Precio Final</button>
+                </div>
+                <div class="result-section">
+                    <div class="result-item"><div class="label">Precio Final</div><div class="value" id="final-price">$86.40</div></div>
+                    <div class="result-mini-grid"><div class="result-mini"><div class="mini-label">Después Descuento</div><div class="mini-value" id="after-discount">$80.00</div></div><div class="result-mini"><div class="mini-label">Ahorras</div><div class="mini-value" id="you-save">$20.00</div></div></div>
+                    <div class="ad-placeholder">Anuncio AdSense</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/es/privacy-policy/">Privacidad</a><a href="/es/terms/">Términos</a><a href="/es/contact/">Contacto</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        function calcular(){const p=parseFloat(document.getElementById('original-price').value)||0,d1=parseFloat(document.getElementById('discount1').value)||0,d2=parseFloat(document.getElementById('discount2').value)||0,tax=parseFloat(document.getElementById('tax-rate').value)||0;let ad=p;if(d1>0)ad-=ad*(d1/100);if(d2>0)ad-=ad*(d2/100);const f=ad*(1+tax/100);document.getElementById('final-price').textContent='$'+f.toFixed(2);document.getElementById('after-discount').textContent='$'+ad.toFixed(2);document.getElementById('you-save').textContent='$'+(p-ad).toFixed(2)}calcular();
+    </script>
+</body>
+</html>
