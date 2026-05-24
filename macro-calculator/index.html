@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Calculator - Free Macronutrient Calculator for Weight Loss & Muscle Gain | CalcGen</title>
+    <meta name="description" content="Calculate your daily macronutrient needs for weight loss, muscle gain, or maintenance. Get personalized protein, carb, and fat targets based on your goals.">
+    <meta name="keywords" content="macro calculator, macronutrient calculator, protein calculator, carb calculator, fat calculator, IIFYM calculator, macro split">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcgen.zaike888.workers.dev/macro-calculator/">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What are macronutrients?", "acceptedAnswer": {"@type": "Answer", "text": "Macronutrients are the three main nutrients your body needs in large amounts: protein, carbohydrates, and fats. Each plays a vital role — protein for muscle repair, carbs for energy, and fats for hormone production."}},
+            {"@type": "Question", "name": "How do I calculate my macros for weight loss?", "acceptedAnswer": {"@type": "Answer", "text": "First calculate your daily calorie target (maintenance minus 300-500 calories). Then split those calories: 30-40% protein, 30-40% carbs, 20-30% fats. Protein is key for preserving muscle during weight loss."}},
+            {"@type": "Question", "name": "What is the best macro split?", "acceptedAnswer": {"@type": "Answer", "text": "For general fitness: 30% protein, 40% carbs, 30% fats. For muscle gain: 30-35% protein, 40-50% carbs, 20-25% fats. For fat loss: 35-40% protein, 25-35% carbs, 25-30% fats. Adjust based on your response."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcgen.zaike888.workers.dev/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://calcgen.zaike888.workers.dev/calculators/"},{"@type":"ListItem","position":3,"name":"Macro Calculator"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Macro Calculator","url":"https://calcgen.zaike888.workers.dev/macro-calculator/","description":"Free macronutrient calculator for weight loss, muscle gain, and maintenance.","applicationCategory":"HealthApplication","operatingSystem":"All"}
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#f8f9fa}
+        .header{background:white;border-bottom:1px solid #e5e7eb;padding:16px 24px;position:sticky;top:0;z-index:100}
+        .header-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-size:24px;font-weight:700;color:#2563eb;text-decoration:none}
+        .nav a{color:#4b5563;text-decoration:none;margin-left:24px;font-size:15px;font-weight:500}
+        .nav a:hover{color:#2563eb}
+        .breadcrumb{max-width:1100px;margin:16px auto 0;padding:0 24px;font-size:14px;color:#6b7280}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .main-container{max-width:1100px;margin:0 auto;padding:24px}
+        .hero{text-align:center;margin-bottom:32px}
+        .hero h1{font-size:36px;font-weight:700;color:#111827;margin-bottom:8px}
+        .hero p{font-size:18px;color:#6b7280;max-width:650px;margin:0 auto}
+        .calculator-card{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .calculator-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        @media(max-width:768px){.calculator-grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-weight:600;font-size:14px;color:#374151;margin-bottom:6px}
+        .input-group input,.input-group select{width:100%;padding:12px 14px;border:2px solid #e5e7eb;border-radius:10px;font-size:16px;background:#fafafa;font-family:inherit}
+        .input-group input:focus,.input-group select:focus{outline:none;border-color:#2563eb;background:white}
+        .calculate-btn{width:100%;padding:14px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;margin-top:8px}
+        .calculate-btn:hover{background:#1d4ed8}
+        .result-display{text-align:center}
+        .macro-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+        @media(max-width:480px){.macro-grid{grid-template-columns:1fr}}
+        .macro-item{background:#f0f7ff;border-radius:12px;padding:20px;text-align:center}
+        .macro-item .macro-value{font-size:28px;font-weight:700;color:#2563eb}
+        .macro-item .macro-unit{font-size:13px;color:#6b7280;margin-top:2px}
+        .macro-item .macro-label{font-size:14px;font-weight:600;color:#111827;margin-bottom:4px}
+        .macro-bar{height:8px;border-radius:4px;margin-bottom:16px;overflow:hidden;display:flex}
+        .macro-bar .bar-protein{background:#2563eb;transition:width 0.3s}
+        .macro-bar .bar-carbs{background:#22c55e;transition:width 0.3s}
+        .macro-bar .bar-fat{background:#f59e0b;transition:width 0.3s}
+        .bar-legend{display:flex;gap:16px;justify-content:center;font-size:13px;color:#6b7280;margin-bottom:16px}
+        .bar-legend span{display:flex;align-items:center;gap:4px}
+        .bar-legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+        .ad-placeholder{background:#f3f4f6;border:2px dashed #d1d5db;border-radius:10px;padding:20px;text-align:center;color:#9ca3af;font-size:13px;margin-top:16px;min-height:250px;display:flex;align-items:center;justify-content:center}
+        .content-section{background:white;border-radius:16px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:32px}
+        .content-section h2{font-size:24px;font-weight:700;color:#111827;margin-bottom:12px}
+        .content-section p,.content-section ul{color:#4b5563;margin-bottom:12px;font-size:16px}
+        .faq-item{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #e5e7eb}
+        .faq-item:last-child{border-bottom:none}
+        .faq-item .question{font-weight:600;color:#111827}.faq-item .answer{color:#6b7280;font-size:15px}
+        .footer{background:white;border-top:1px solid #e5e7eb;padding:24px;text-align:center;color:#6b7280;font-size:14px;margin-top:32px}
+        .footer a{color:#2563eb;text-decoration:none;margin:0 12px}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="header-inner"><a href="/" class="logo">CalcGen</a><nav class="nav"><a href="/">Home</a><a href="/calculators/">Calculators</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div></header>
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/calculators/">Calculators</a> &rsaquo; <strong>Macro Calculator</strong></div>
+    <main class="main-container">
+        <section class="hero"><h1>Macro Calculator — Free Macronutrient Calculator</h1><p>Calculate your daily protein, carb, and fat targets for weight loss, muscle gain, or maintenance. Personalized macro split based on your goals.</p></section>
+        
+        <section class="calculator-card">
+            <div class="calculator-grid">
+                <div class="input-column">
+                    <div class="input-group"><label>Daily Calorie Target</label><input type="number" id="calories" value="2000" min="500" max="6000" step="50"></div>
+                    <div class="input-group"><label>Goal</label><select id="goal"><option value="balanced" selected>Balanced (Maintenance)</option><option value="fat-loss">Fat Loss</option><option value="muscle-gain">Muscle Gain</option><option value="custom">Custom Split</option></select></div>
+                    <div id="custom-split" style="display:none">
+                        <div class="input-group"><label>Protein (%)</label><input type="number" id="protein-pct" value="30" min="10" max="60"></div>
+                        <div class="input-group"><label>Carbs (%)</label><input type="number" id="carbs-pct" value="40" min="10" max="70"></div>
+                        <div class="input-group"><label>Fat (%)</label><input type="number" id="fat-pct" value="30" min="10" max="50"></div>
+                    </div>
+                    <button class="calculate-btn" onclick="calculateMacros()">Calculate My Macros</button>
+                </div>
+                <div class="result-display">
+                    <div class="macro-grid">
+                        <div class="macro-item"><div class="macro-label">Protein</div><div class="macro-value" id="protein-grams">150</div><div class="macro-unit">grams (600 cal)</div></div>
+                        <div class="macro-item"><div class="macro-label">Carbs</div><div class="macro-value" id="carbs-grams">200</div><div class="macro-unit">grams (800 cal)</div></div>
+                        <div class="macro-item"><div class="macro-label">Fat</div><div class="macro-value" id="fat-grams">67</div><div class="macro-unit">grams (600 cal)</div></div>
+                    </div>
+                    <div class="macro-bar"><div class="bar-protein" id="bar-protein" style="width:30%"></div><div class="bar-carbs" id="bar-carbs" style="width:40%"></div><div class="bar-fat" id="bar-fat" style="width:30%"></div></div>
+                    <div class="bar-legend"><span><span class="dot" style="background:#2563eb"></span> Protein</span><span><span class="dot" style="background:#22c55e"></span> Carbs</span><span><span class="dot" style="background:#f59e0b"></span> Fat</span></div>
+                    <div class="ad-placeholder">AdSense Ad Unit (300×250)</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>How to Use This Macro Calculator</h2>
+            <ul><li>Enter your daily calorie target (use our <a href="/calorie-calculator/">calorie calculator</a> first)</li><li>Choose your goal for a recommended split</li><li>Or select Custom to set your own percentages</li></ul>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="question">What are macros?</div><div class="answer">Macronutrients — protein, carbs, and fats. Protein = 4 cal/g, Carbs = 4 cal/g, Fat = 9 cal/g.</div></div>
+            <div class="faq-item"><div class="question">What's the best macro split?</div><div class="answer">For fat loss: 35-40% protein. For muscle gain: 30% protein, higher carbs. For maintenance: balanced 30/40/30.</div></div>
+            <div class="faq-item"><div class="question">Is this calculator free?</div><div class="answer">Yes, completely free.</div></div>
+        </section>
+        
+        <section class="content-section"><h2>Related Calculators</h2><ul><li><a href="/calorie-calculator/">Calorie Calculator</a></li><li><a href="/bmi-calculator/">BMI Calculator</a></li><li><a href="/blog/how-to-count-macros/">How to Count Macros Guide</a></li></ul></section>
+    </main>
+    <footer class="footer"><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a><a href="/about/">About</a></div><p>&copy; 2026 CalcGen</p></footer>
+    <script>
+        document.getElementById('goal').addEventListener('change',function(){document.getElementById('custom-split').style.display=this.value==='custom'?'block':'none';calculateMacros()});
+        function calculateMacros(){
+            const cal=parseInt(document.getElementById('calories').value)||2000;
+            const goal=document.getElementById('goal').value;
+            let pPct=30,cPct=40,fPct=30;
+            if(goal==='fat-loss'){pPct=40;cPct=30;fPct=30}
+            else if(goal==='muscle-gain'){pPct=30;cPct=50;fPct=20}
+            else if(goal==='custom'){pPct=parseInt(document.getElementById('protein-pct').value)||30;cPct=parseInt(document.getElementById('carbs-pct').value)||40;fPct=parseInt(document.getElementById('fat-pct').value)||30}
+            const pG=Math.round(cal*pPct/100/4),cG=Math.round(cal*cPct/100/4),fG=Math.round(cal*fPct/100/9);
+            document.getElementById('protein-grams').textContent=pG;
+            document.getElementById('carbs-grams').textContent=cG;
+            document.getElementById('fat-grams').textContent=fG;
+            document.getElementById('bar-protein').style.width=pPct+'%';
+            document.getElementById('bar-carbs').style.width=cPct+'%';
+            document.getElementById('bar-fat').style.width=fPct+'%';
+        }
+        calculateMacros();
+    </script>
+</body>
+</html>
